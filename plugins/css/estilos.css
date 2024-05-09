@@ -1,0 +1,177 @@
+/* ESTILOS CSS DEL PROYECTO */
+
+.dt-buttons {
+  display: contents;
+}
+
+button.dt-button, div.dt-button, a.dt-button {
+  position: relative;
+  display: inline-block;
+  box-sizing: border-box;
+  margin-right: 0.333em;
+  margin-bottom: 0.333em;
+  padding: 0.5em 1em;
+  border: 0px solid #999;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.88em;
+  line-height: 1.6em;
+  color: white;
+  white-space: nowrap;
+  overflow: hidden;
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='white', EndColorStr='#e9e9e9');
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  text-decoration: none;
+  outline: none;
+  text-overflow: ellipsis;
+}
+
+.alert-danger {
+  color: white;
+  background-color: #e04e5c;
+  /*border-color: #f5c6cb;*/
+  font-weight: bold;
+}
+
+#icono{
+  font-size: 1.5rem;
+}
+
+#icono-sub{
+  font-size: 1.25rem;
+  margin-right: 5px;
+}
+
+#tabla-residente-habitacion{
+	font-size: 0.77rem;
+}
+
+#menuResidentes {
+    position:initial;
+}
+
+#menuResidentes, #menuProfesionales, #menuAdministracion {
+    position:initial;
+}
+
+.titulo-seccion{
+	font-weight: bold; 
+	font-size: 1.15rem; 
+	color: #0062cc;
+	
+}
+
+span{
+  cursor: pointer;
+}
+
+footer{
+  position: fixed;
+  width: 91%;
+  bottom: 0;
+}
+
+thead{
+  background-color: #4e73df; 
+  color: white;
+ }
+
+td {
+  color: black;
+}
+
+.btn.btn-outline-primary.botonActivar{
+	color: #4e73df;	
+	border-color: #4e73df;	
+}
+
+.btn.btn-outline-primary.botonActivar:hover{
+	background-color: #4e73df;	
+	color: white;	
+}
+
+.select2-container {
+  width: 100% !important; /* ancho del contenedor */
+}
+
+/* Estilo para el campo de entrada de select2 */
+.select2-selection {
+  height: 38px; /* altura del campo */
+  border: 1px solid #ced4da; /* borde del campo */
+  border-radius: 0.25rem; /* radio de borde del campo */
+}
+
+/* Estilo para el botón de despliegue de select2 */
+.select2-selection__arrow {
+  height: 38px; /* altura del botón */
+  border: 1px solid #ced4da; /* borde del botón */
+  border-radius: 0 0.25rem 0.25rem 0; /* radio de borde del botón */
+}
+
+/* Estilo para los elementos de la lista desplegable de select2 */
+.select2-results__option {
+  padding: 8px 2px; /* espaciado del elemento */
+  border-bottom: 2px solid #e9ecef; /* borde inferior del elemento */
+}
+
+/* Estilo para el elemento seleccionado de select2 */
+.select2-selection__choice {
+  height: 28px; /* altura del elemento seleccionado */
+  line-height: 28px; /* altura de línea del elemento seleccionado */
+  border-radius: 0.25rem; /* radio de borde del elemento seleccionado */
+}
+
+/* Estilo para el botón de eliminar del elemento seleccionado de select2 */
+.select2-selection__choice__remove {
+  height: 28px; /* altura del botón de eliminar */
+  line-height: 28px; /* altura de línea del botón de eliminar */
+  margin-right: 4px; /* margen derecho del botón de eliminar */
+}
+
+/* Estilo para que los box aumenten de tamaño a medida que se incluyen opciones select2 multiple */
+.select2-selection--multiple{
+  overflow: hidden !important;
+  height: auto !important;
+}
+
+
+
+
+
+/* {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+} */
+
+
+.boton_residente {
+  background-color: #8ba8ff;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  width: 75%;
+  height: 100%;
+
+
+}
+
+.listadoResidentes_tabla {
+  display:grid;
+  grid-template-columns: auto auto auto;
+  overflow-x: scroll;
+  height: 50%;
+  
+}
+.padre_alinearCentroHijos {
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+}
