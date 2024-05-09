@@ -267,6 +267,7 @@
 				<div class="row mt-5">
 					<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 text-center">
 						<button type="button" class="btn btn-success" id="boton-agregar-constante">Alta Constantes</button>
+						<button type="button" class="btn btn-success" id="boton-agregar-constante-guardarSiguiente">Guardar y Siguiente</button>
 					</div>
 				</div>
             </div>
@@ -419,6 +420,7 @@
 				<div class="row mt-5">
 					<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 text-center">
 						<button type="button" class="btn btn-success" id="boton-agregar-eliminacion">Alta Eliminación</button>
+						<button type="button" class="btn btn-success" id="boton-agregar-eliminacion-guardarSiguiente">Guardar y Siguiente</button>
 					</div>
 				</div>
             </div>
@@ -485,6 +487,7 @@
 				<div class="row mt-5">
 					<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 text-center">
 						<button type="button" class="btn btn-success" id="boton-agregar-alimentacion">Alta Alimentación</button>
+						<button type="button" class="btn btn-success" id="boton-agregar-alimentacion-guardarSiguiente">Guardar y Siguiente</button>
 					</div>
 				</div>
             </div>
@@ -579,6 +582,7 @@
 				<div class="row mt-5">
 					<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 text-center">
 						<button type="button" class="btn btn-success" id="boton-agregar-movilizacion">Alta Movilización</button>
+						<button type="button" class="btn btn-success" id="boton-agregar-movilizacion-guardarSiguiente">Guardar y Siguiente</button>
 					</div>
 				</div>
             </div>
@@ -671,6 +675,7 @@
 				<div class="row mt-5">
 					<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 text-center">
 						<button type="button" class="btn btn-success" id="boton-agregar-higiene">Alta Higiene</button>
+						<button type="button" class="btn btn-success" id="boton-agregar-higiene-guardarSiguiente">Guardar y Siguiente</button>
 					</div>
 				</div>
             </div>
@@ -758,6 +763,7 @@
 	<div class="row mt-5">
 		<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 text-center">
 			<button type="button" class="btn btn-success" id="boton-agregar-medicacion">Alta medicacion</button>
+			<button type="button" class="btn btn-success" id="boton-agregar-medicacion-guardarSiguiente">Guardar y Siguiente</button>
 		</div>
 	</div>
 </div>
@@ -820,6 +826,7 @@
 				<div class="row mt-5">
 					<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 text-center">
 						<button type="button" class="btn btn-success" id="boton-agregar-descanso">Alta Descanso</button>
+						<button type="button" class="btn btn-success" id="boton-agregar-descanso-guardarSiguiente">Guardar y Siguiente</button>
 					</div>
 				</div>
             </div>
@@ -874,6 +881,7 @@
 	<div class="row mt-5">
 		<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 text-center">
 			<button type="button" class="btn btn-success" id="boton-agregar-incidencia">Alta Incidencia</button>
+			<button type="button" class="btn btn-success" id="boton-agregar-incidencia-guardarSalir">Guardar y Salir</button>
 		</div>
 	</div>
 </div>

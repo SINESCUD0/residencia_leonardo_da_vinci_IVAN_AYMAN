@@ -20,11 +20,11 @@ function cargarTablaConstanteVital(){
 
         $('#ver-tabla-constante').hide();
         
-       
     }
 }
 
 function agregarConstante(){
+    let resp_func = false
     let modoBusqueda = $('#ver-menu-registro').find('.modoBusquedaResidente').val();
 
     let idResidente = busquedaIdResidente(modoBusqueda,$('#ver-menu-registro'));
@@ -111,6 +111,8 @@ function agregarConstante(){
                     timer: 1500,
 
                 });
+                
+                resp_func = true;
 
 
 
@@ -135,10 +137,15 @@ function agregarConstante(){
                     timer: 2500,
 
                 });
+                
+                resp_func = false;
 
             }
 
         });
+        
+        
+        return resp_func;
 }
  //------------****INICIO|1| HISTORIAL CONSTANTES****--------------------
 //---***|INICIO|Funciones para cargar una tabla con el historial según una fecha***---
@@ -467,6 +474,7 @@ function cargarTablaEliminacion(){
 }
 
 function agregarEliminacion(){
+    let resp_func = false
     let modoBusqueda = $('#ver-menu-registro').find('.modoBusquedaResidente').val();
     let idResidente = busquedaIdResidente(modoBusqueda,$('#ver-menu-registro'));
    
@@ -550,6 +558,8 @@ function agregarEliminacion(){
                     timer: 1500,
    
                 });
+                    
+                resp_func = true
    
    
    
@@ -562,6 +572,7 @@ function agregarEliminacion(){
                 let respuesta =  $.parseJSON(data.responseText);
    
                 swal({
+                        
    
                     title: "ERROR",
    
@@ -574,10 +585,16 @@ function agregarEliminacion(){
                     timer: 2500,
    
                 });
+                    
+                    resp_func = false
    
             }
+                
+                
    
         });
+        
+        return resp_func
 }
 //*****HISTORIAL ELIMINACION*****/
 function cargarRegistroEliminacion_1(){
@@ -898,6 +915,7 @@ function cargarTablaAlimentacion(){
 }
 
 function agregarAlimentacion(){
+        let resp_func = false
     let modoBusqueda = $('#ver-menu-registro').find('.modoBusquedaResidente').val();
     let idResidente = busquedaIdResidente(modoBusqueda,$('#ver-menu-registro'));
     
@@ -970,6 +988,8 @@ function agregarAlimentacion(){
                     timer: 1500,
    
                 });
+                    
+                    resp_func = true
    
    
    
@@ -994,10 +1014,14 @@ function agregarAlimentacion(){
                     timer: 2500,
    
                 });
+                    
+                    resp_func = false
    
             }
    
         });
+        
+        return resp_func
 }
 //ºº--HISTORIAL ALIMENTACION--
 function cargarRegistroAlimentacion_1(){
@@ -1296,6 +1320,7 @@ function cargarTablaMovilizacion(){
 }
 
 function agregarMovilizacion(){
+      let resp_func = false
     let modoBusqueda = $('#ver-menu-registro').find('.modoBusquedaResidente').val();
     let idResidente = busquedaIdResidente(modoBusqueda,$('#ver-menu-registro'));
 
@@ -1391,7 +1416,9 @@ function agregarMovilizacion(){
                     timer: 1500,
    
                 });
-   
+                    
+                    
+                    resp_func = true
    
    
           // setTimeout('location.reload()',2000); 
@@ -1415,10 +1442,15 @@ function agregarMovilizacion(){
                     timer: 2500,
    
                 });
+                    
+                    
+                    resp_func = false
    
             }
    
         });
+        
+        return resp_func
 }
 
 //ºº--HISTORIAL MOVILIZACION--
@@ -1731,6 +1763,7 @@ function cargarTablaHigiene(){
 }
 
 function agregarHigiene(){
+        let resp_func = false
     let modoBusqueda = $('#ver-menu-registro').find('.modoBusquedaResidente').val();
     let idResidente = busquedaIdResidente(modoBusqueda,$('#ver-menu-registro'));
   
@@ -1858,7 +1891,7 @@ function agregarHigiene(){
                 });
    
    
-   
+   			resp_func = true
           // setTimeout('location.reload()',2000); 
    
             },
@@ -1880,10 +1913,14 @@ function agregarHigiene(){
                     timer: 2500,
    
                 });
+                    
+                    resp_func = false
    
             }
    
         });
+        
+        return resp_func
    }
 
 //ºº--HISTORIAL HIGIENE--
@@ -2198,6 +2235,7 @@ function cargarTablaMedicacion(){
 }
 
 function agregarMedicacion(){
+        let resp_func = false
     let modoBusqueda = $('#ver-menu-registro').find('.modoBusquedaResidente').val();
     let idResidente = busquedaIdResidente(modoBusqueda,$('#ver-menu-registro'));
    
@@ -2317,7 +2355,7 @@ function agregarMedicacion(){
                 });
    
    
-   
+   			resp_func = true
           // setTimeout('location.reload()',2000); 
    
             },
@@ -2339,10 +2377,14 @@ function agregarMedicacion(){
                     timer: 2500,
    
                 });
+                    
+                    resp_func = false
    
             }
    
         });
+        
+        return resp_func
    }
 
 
@@ -2663,6 +2705,8 @@ function cargarTablaDescanso(){
 }
 
 function agregarDescanso(){
+        let resp_func = false
+        
    	let modoBusqueda = $('#ver-menu-registro').find('.modoBusquedaResidente').val();
 
 	let idResidente = busquedaIdResidente(modoBusqueda,$('#ver-menu-registro'));
@@ -2729,7 +2773,7 @@ function agregarDescanso(){
 
 				});
 
-
+			resp_func = true
 
 		  // setTimeout('location.reload()',2000); 
 
@@ -2752,10 +2796,14 @@ function agregarDescanso(){
 					timer: 2500,
 
 				});
+                    
+                    resp_func = false
 
 			}
 
 		});
+        
+        return resp_func
 }
 
 
@@ -3054,6 +3102,7 @@ function cargarTablaIncidencia(){
 }
 
 function agregarIncidencia(){
+        let resp_func = false
  let modoBusqueda = $('#ver-menu-registro').find('.modoBusquedaResidente').val();
  let idResidente = busquedaIdResidente(modoBusqueda,$('#ver-menu-registro'));
  
@@ -3076,11 +3125,9 @@ function agregarIncidencia(){
 
          turno : turno
      }
+       
 
-    
-   
-
-
+		
      $.ajax({
 
          url: '../controllers/registro.php?task=altaRegistroIncidencia',
@@ -3094,7 +3141,7 @@ function agregarIncidencia(){
          dataType: "html",
 
          success: function(data) {
-
+			
              let respuesta =  $.parseJSON(data);
 
              swal({
@@ -3112,7 +3159,7 @@ function agregarIncidencia(){
              });
 
 
-
+		resp_func = true
        // setTimeout('location.reload()',2000); 
 
          },
@@ -3134,10 +3181,14 @@ function agregarIncidencia(){
                  timer: 2500,
 
              });
+                 
+                 resp_func = false
 
          }
 
      });
+        
+        return resp_func
 }
 
 

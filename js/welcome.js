@@ -4592,6 +4592,36 @@ $('.habitacion-residente').change(function(){
 
 
 
+//-----------***AUTOMATIZACIÓN DE "Guardar y Siguiente" para los 8 botones"***--------------------------
+
+// IDEA - Si se pulsa el primer Botón (0) en la tabla (0), rellena la información y se da "Guardar y Salir", se cierre
+// la pantallita actual y se abra la siguiente (1)
+
+var tablas_registro = $("div[id='seccionRegistros'] > div[id^='ver-tabla-']") // Recojo las tablas que empiezen por...
+var tablas_registro_botonesGuardarSiguiente = $(tablas_registro).find("button[id$='-guardarSiguiente']") // Recojo los botones acabados en...
+
+//tablas_registro_botonesGuardarSiguiente.last().text("Guardar y Salir") // El ultimo elemento le cambio de nombre. Estética
+
+//$(tablas_registro_botonesGuardarSiguiente).each(function(index){
+        
+  //  let id_sin_guardarSiguiente = $( this ).attr("id").replace("-guardarSiguiente", "")
+        
+//	$( this ).click(function(){
+            
+    //    let boton_alta_correspondiente = $(tablas_registro_botonesGuardarSiguiente).siblings().eq(0)
+  //         console.log(boton_alta_correspondiente)
+        
+//        $(tablas_registro[index]).hide() // Cierro la tabla actual
+      //  
+    //    if ( $(tablas_registro[index+1]) != null ) // En la última posición + 1 devuelve null, así que lo tomo en cuenta
+  //      	$(tablas_registro[index+1]).toggle() // Abro la siguiente
+//    })
+//})
+
+
+
+
+
 //-----------***INICIO|1|REGISTRO CONSTANTES VITALES***--------------------------
 
     //CLICK BOTON CONSTANTES VITALES y OTROS PARÁMETROS EN EL MENU REGISTROS(menu_registro.php)
@@ -4621,23 +4651,16 @@ $('.habitacion-residente').change(function(){
 
     $('#boton-agregar-constante').click(function(){
 
-		agregarConstante();
+		agregarConstante()
 
 	});
+    $('#boton-agregar-constante-guardarSiguiente').click(function(){
 
-	$('#boton-agregar-constante-guardarSiguiente').click(function(){
-
-		agregarConstante();
-
-		// Cierro la tabla Constante -> Abro la siguiente, descanso
-			$('#ver-tabla-constante').hide();
-			$('#ver-tabla-descanso').toggle();
-			$('#ver-tabla-eliminacion').hide();
-			$('#ver-tabla-alimentacion').hide();
-			$('#ver-tabla-movilizacion').hide();
-			$('#ver-tabla-higiene').hide();
-			$('#ver-tabla-incidencia').hide();
-			$('#ver-tabla-medicacion').hide();
+        
+		if ( agregarConstante() ){
+        	$("div#ver-tabla-constante").hide()
+            $("div#ver-tabla-eliminacion").toggle()
+        }
 
 	});
 
@@ -4663,6 +4686,17 @@ $('.habitacion-residente').change(function(){
 	});
 
 
+    $('#boton-agregar-eliminacion-guardarSiguiente').click(function(){
+
+        if ( agregarEliminacion() ){
+        	$("div#ver-tabla-eliminacion").hide()
+            $("div#ver-tabla-alimentacion").toggle()
+        }
+
+	});
+
+
+
 	//-----------***FIN|2|REGISTRO ELIMINACION***--------------------------
 
 	//-----------***INICIO|3|REGISTRO ALIMENTACION***--------------------------
@@ -4679,6 +4713,16 @@ $('.habitacion-residente').change(function(){
 
 	});
 
+    $('#boton-agregar-alimentacion-guardarSiguiente').click(function(){
+
+		if ( agregarAlimentacion() ) {
+        	$("div#ver-tabla-alimentacion").hide()
+            $("div#ver-tabla-movilizacion").toggle()
+        }
+
+	});
+
+
 	//-----------***FIN|3|REGISTRO ALIMENTACION***--------------------------
 
 	//-----------***INICIO|4|REGISTRO MOVILIZACION***--------------------------
@@ -4692,6 +4736,16 @@ $('.habitacion-residente').change(function(){
     $('#boton-agregar-movilizacion').click(function(){
 
 		agregarMovilizacion();
+
+	});
+
+    $('#boton-agregar-movilizacion-guardarSiguiente').click(function(){
+
+        if ( agregarMovilizacion() ) {
+        	$("div#ver-tabla-movilizacion").hide()
+            $("div#ver-tabla-higiene").toggle()
+        }
+
 
 	});
 
@@ -4711,6 +4765,15 @@ $('.habitacion-residente').change(function(){
 
 	});
 
+    $('#boton-agregar-higiene-guardarSiguiente').click(function(){
+
+        if (agregarHigiene()) {
+        	$("div#ver-tabla-higiene").hide()
+            $("div#ver-tabla-medicacion").toggle()
+        }
+
+	});
+
 	//-----------***FIN|5|REGISTRO HIGIENE***--------------------------
 
 	//-----------***INICIO|6|REGISTRO MEDICACION***--------------------------
@@ -4726,6 +4789,16 @@ $('.habitacion-residente').change(function(){
 		agregarMedicacion();
 
 	});
+
+    $('#boton-agregar-medicacion-guardarSiguiente').click(function(){
+
+		if (agregarMedicacion()) {
+        	$("div#ver-tabla-medicacion").hide()
+            $("div#ver-tabla-descanso").toggle()
+        }
+
+	});
+
 
 	//-----------***FIN|6|REGISTRO MEDICACION***--------------------------
 
@@ -4747,18 +4820,33 @@ $('.habitacion-residente').change(function(){
 
 	});
 
+    $('#boton-agregar-descanso-guardarSiguiente').click(function(){
+
+		if (agregarDescanso()) {
+        	$("div#ver-tabla-descanso").hide()
+            $("div#ver-tabla-incidencia").toggle()
+        }
+
+	});
+
 
 //-----------***FIN|7|REGISTRO SUEÑO/DESCANSO***--------------------------
 
    //-----------***INICIO|8|REGISTRO INCIDENCIA***--------------------------
     $('#boton-incidencia').click(function(){
-
+		
     	cargarTablaIncidencia();
 
     });
 
     	
     $('#boton-agregar-incidencia').click(function(){
+
+		agregarIncidencia();
+
+	});
+
+    $('#boton-agregar-incidencia-guardarSalir').click(function(){
 
 		agregarIncidencia();
 
