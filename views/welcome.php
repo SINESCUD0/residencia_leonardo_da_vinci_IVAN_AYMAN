@@ -66,7 +66,7 @@
   <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js" defer></script>  
 
 
-  <script src="../js/katz.js" type="text/javascript"></script>
+  <script src="/residencialeonardo.atwebpages.com/js/katz.js" type="text/javascript"></script>
 
 
 
@@ -77,11 +77,11 @@
 
   <!--<link rel="stylesheet" href="../plugins/buttons.dataTables.min.css">-->
 
-  <link rel="stylesheet" href="../plugins/css/summernote.css">
+  <!-- <link rel="stylesheet" href="../plugins/css/summernote.css">
 
   <link rel="stylesheet" href="../plugins/css/summernote-lite.css">
 
-  <link rel="stylesheet" href="../plugins/css/summernote-bs4.css">
+  <link rel="stylesheet" href="../plugins/css/summernote-bs4.css"> -->
 
 
 
@@ -728,7 +728,7 @@
 
                   <div class="card-header py-3 flex-row align-items-center justify-content-between">
 
-                    <h6 class="m-0 font-weight-bold text-primary text-center">Estadísticas</h6>
+                    <!-- <h6 class="m-0 font-weight-bold text-primary text-center">Estadísticas</h6> -->
 
                   </div>
 
@@ -738,7 +738,7 @@
 
                     <div class="chart-pie pt-4 pb-2">
 
-                      <canvas id="myPieChart"></canvas>
+                      <!-- <canvas id="myPieChart"></canvas> -->
 
                     </div>
 
@@ -819,7 +819,7 @@
 
 
         /* BOTONES DE RESIDENTE */
-
+        include ($_SERVER['DOCUMENT_ROOT']."/residencialeonardo.atwebpages.com/models/modelo_habitacion.php");
         include_once('alta_residente.php'); //ALTA RESIDENTE
 
         include_once('baja_residente.php'); //BAJA RESIDENTE
@@ -829,6 +829,8 @@
         include_once('contacto_residente.php'); //CONTACTO RESIDENTE
 
         include_once('tablas_residente.php'); //TABLAS RESIDENTE
+
+        
 
 
         /* BOTONES REGISTRO DE INTERVENCIONES */

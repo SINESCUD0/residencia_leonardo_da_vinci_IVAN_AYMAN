@@ -141,14 +141,9 @@ td {
 
 
 
-/* {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-} */
 
 
-.boton_residente {
+/* .boton_residente {
   background-color: #8ba8ff;
   border: none;
   color: white;
@@ -173,5 +168,4 @@ td {
 .padre_alinearCentroHijos {
   display: flex;
   justify-content: center;
-  /* align-items: center; */
-}
+} */

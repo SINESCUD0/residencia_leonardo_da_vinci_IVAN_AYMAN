@@ -8,65 +8,65 @@ $(document).ready(function(){
 
     //GENERO EL CHART CON LOS DATOS
 
-    var ctx = document.getElementById("myPieChart");
+    // var ctx = document.getElementById("myPieChart");
 
-    var myPieChart = new Chart(ctx, {
+    // var myPieChart = new Chart(ctx, {
 
-      type: 'doughnut',
+    //   type: 'doughnut',
 
-      data: {
+    //   data: {
 
-        labels: ["Personal", "Residente", "Camas"],
+    //     labels: ["Personal", "Residente", "Camas"],
 
-        datasets: [{
+    //     datasets: [{
 
-          data: [totalPersonal,totalResidente,habitacionesOcupadas],
+    //       data: [totalPersonal,totalResidente,habitacionesOcupadas],
 
-          backgroundColor: ['#ffc107', '#1cc88a', '#36b9cc'],
+    //       backgroundColor: ['#ffc107', '#1cc88a', '#36b9cc'],
 
-          hoverBackgroundColor: ['#eab106', '#17a673', '#2c9faf'],
+    //       hoverBackgroundColor: ['#eab106', '#17a673', '#2c9faf'],
 
-          hoverBorderColor: "rgba(234, 236, 244, 1)",
+    //       hoverBorderColor: "rgba(234, 236, 244, 1)",
 
-        }],
+    //     }],
 
-      },
+    //   },
 
-      options: {
+    //   options: {
 
-        maintainAspectRatio: false,
+    //     maintainAspectRatio: false,
 
-        tooltips: {
+    //     tooltips: {
 
-          backgroundColor: "rgb(255,255,255)",
+    //       backgroundColor: "rgb(255,255,255)",
 
-          bodyFontColor: "#858796",
+    //       bodyFontColor: "#858796",
 
-          borderColor: '#dddfeb',
+    //       borderColor: '#dddfeb',
 
-          borderWidth: 1,
+    //       borderWidth: 1,
 
-          xPadding: 15,
+    //       xPadding: 15,
 
-          yPadding: 15,
+    //       yPadding: 15,
 
-          displayColors: false,
+    //       displayColors: false,
 
-          caretPadding: 10,
+    //       caretPadding: 10,
 
-        },
+    //     },
 
-        legend: {
+    //     legend: {
 
-          display: false
+    //       display: false
 
-        },
+    //     },
 
-        cutoutPercentage: 80,
+    //     cutoutPercentage: 80,
 
-      },
+    //   },
 
-    });
+    // });
 
 
 

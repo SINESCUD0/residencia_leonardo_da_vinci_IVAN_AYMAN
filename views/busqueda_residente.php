@@ -13,24 +13,75 @@
 		<!-- <div class="col-xl-4 col-lg-3 col-md-3 col-sm-2"></div> -->
 		<!-- <div class="col-xl-4 col-lg-6 col-md-6 col-sm-8" > -->
 			<div class="input-group form-group padre_alinearCentroHijos" >
-					<select class="custom-select listadoResidentes dni-residente" hidden> <option> </option></select>
+					<!-- <select class="custom-select listadoResidentes dni-residente" hidden> <option> </option></select> -->
 						<div class="listadoResidentes_tabla">
 
 							<?php
-								foreach($listadoResidentesActivos as $residente){
-									$nombre_apellidos = $residente[2].' '.$residente[3];
-									$dni = $residente[1];
-									$id = $residente[0];
+							// BORRAR LUEGO, lo uso en FOR
+							$listadoResidentesActivos
+							
+								// foreach($listadoResidentesActivos as $residente){
+									// $nombre_apellidos = $residente[2].' '.$residente[3];
+									// $dni = $residente[1];
+									// $id = $residente[0];
 							?>
-									<button id="<?php echo $id;?>" class="boton_residente" >
-										<?php echo $nombre_apellidos ?> <br> <?php echo $dni ?>
-									</button>
+									<!-- <button id="<?php //echo $id;?>" class="boton_residente" > -->
+										<!-- <?php //echo $nombre_apellidos ?> <br> <?php //echo $dni ?> -->
+									<!-- </button> -->
 					
 							<?php 
-							}
+							// }
 							?>
 
+
+
+
+							
+
+
 						</div>
+
+						<?php
+							// Mis pruebas
+							echo "metete coño";
+							// include $_SERVER['DOCUMENT_ROOT']."/residencialeonardo.atwebpages.com/db/config.php";
+							include $_SERVER['DOCUMENT_ROOT']."/residencialeonardo.atwebpages.com/controllers/controlador_habitacion.php";
+							echo "metete coño";
+							
+							echo "metete coño";
+
+							// var_dump(array_values($listadoHabitaciones));
+
+							
+
+							
+							// var_dump($habitacionesOcupadas);
+							// var_dump($listadoHabitacionesOcupadasConResidentes);
+							// var_dump($habitacioneslibresDobles);
+							// var_dump($habitacioneslibresIndividuales);
+							
+							// for($i=0; $i<count($listadoHabitacionesOcupadasConResidentes); $i++){
+								
+								// $numero_habitacion = $listadoHabitacionesOcupadasConResidentes[$i][1];
+							// 	print($numero_habitacion);
+							// 	var_dump(array_values($habitacioneslibresIndividuales));
+							// 	var_dump(array_values($habitacioneslibresDobles));
+							// 	print("<br><br>");
+								
+								// if(in_array($numero_habitacion, array_values($habitacioneslibresIndividuales))){
+								// 	array_push($listadoHabitacionesOcupadasConResidentes[$i], "individual");
+								// }elseif(in_array($numero_habitacion, array_values($habitacioneslibresDobles))){
+								// 	array_push($listadoHabitacionesOcupadasConResidentes[$i], "doble");
+								// }
+								
+							// }
+
+							// var_dump($listadoHabitacionesOcupadasConResidentes);
+							// var_dump($habitacioneslibresDobles);
+							// print("<br><br>");
+							// var_dump($habitacioneslibresIndividuales);
+
+							?>
 			</div>
 		<!-- </div> -->
     <!-- <div class="col-xl-4 col-lg-3 col-md-3 col-sm-2"></div> -->

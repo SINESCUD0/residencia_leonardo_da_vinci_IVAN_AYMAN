@@ -15,18 +15,30 @@ function inicio(){
     $("[name='Z']").on("click", katz2);
     $("[name='O']").on("click", katz2);
 
-    $("#B[name='B']")[2].addEventListener("click", katzpai);
-    $("#B[name='B']")[3].addEventListener("click", katzpai);
-    $("#V[name='V']")[2].addEventListener("click", katzpai);
-    $("#V[name='V']")[3].addEventListener("click", katzpai);
-    $("#WC[name='WC']")[2].addEventListener("click", katzpai);
-    $("#WC[name='WC']")[3].addEventListener("click", katzpai);
-    $("#M[name='M']")[2].addEventListener("click", katzpai);
-    $("#M[name='M']")[3].addEventListener("click", katzpai);
-    $("#C[name='C']")[2].addEventListener("click", katzpai);
-    $("#C[name='C']")[3].addEventListener("click", katzpai);
-    $("#A[name='A']")[2].addEventListener("click", katzpai);
-    $("#A[name='A']")[3].addEventListener("click", katzpai);
+    // $("#B[name='B']")[2].addEventListener("click", katzpai);
+    $("#B[name='B']")[0].addEventListener("click", katzpai);
+    // $("#B[name='B']")[3].addEventListener("click", katzpai);
+    $("#B[name='B']")[1].addEventListener("click", katzpai);
+    // $("#V[name='V']")[2].addEventListener("click", katzpai);
+    $("#V[name='V']")[0].addEventListener("click", katzpai);
+    // $("#V[name='V']")[3].addEventListener("click", katzpai);
+    $("#V[name='V']")[1].addEventListener("click", katzpai);
+    // $("#WC[name='WC']")[2].addEventListener("click", katzpai);
+    $("#WC[name='WC']")[0].addEventListener("click", katzpai);
+    // $("#WC[name='WC']")[3].addEventListener("click", katzpai);
+    $("#WC[name='WC']")[1].addEventListener("click", katzpai);
+    // $("#M[name='M']")[2].addEventListener("click", katzpai);
+    $("#M[name='M']")[0].addEventListener("click", katzpai);
+    // $("#M[name='M']")[3].addEventListener("click", katzpai);
+    $("#M[name='M']")[1].addEventListener("click", katzpai);
+    // $("#C[name='C']")[2].addEventListener("click", katzpai);
+    $("#C[name='C']")[0].addEventListener("click", katzpai);
+    // $("#C[name='C']")[3].addEventListener("click", katzpai);
+    $("#C[name='C']")[1].addEventListener("click", katzpai);
+    // $("#A[name='A']")[2].addEventListener("click", katzpai);
+    $("#A[name='A']")[0].addEventListener("click", katzpai);
+    // $("#A[name='A']")[3].addEventListener("click", katzpai);
+    $("#A[name='A']")[1].addEventListener("click", katzpai);
 
     $("#selectKatz").on("click", katz2);
 }
