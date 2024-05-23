@@ -9,6 +9,6 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 }
 
 require $_SERVER['DOCUMENT_ROOT']."/residencialeonardo.atwebpages.com/views/vista_habitaciones.php";
-echo "sa metio";
+
 
 ?>

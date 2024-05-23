@@ -1,59 +1,54 @@
 <?php
-// require $_SERVER['DOCUMENT_ROOT']."/residencialeonardo.atwebpages.com/db/config.php";
+//require $_SERVER['DOCUMENT_ROOT']."/residencialeonardo.atwebpages.com/db/config.php";
 // $tabla = "";
-
-echo "mierda";
-	function obtenerHabitaciones($piso){
-		$objetosArray = array();
-		$piso .= "%";
-		try {
-			$obtenerInfo = $conn->prepare("SELECT * FROM habitacion WHERE id_habitacion LIKE :piso ORDER BY id_habitacion;");
-			$obtenerInfo->bindParam(':piso', $piso);
-			$obtenerInfo->execute();
-			$informacion=$obtenerInfo->fetchAll();
-			foreach ($informacion as $row) {
-				$idHabitacion = $row[0];
-				$numeroCamas = $row[1];
-				$objetosArray[$idHabitacion] = [];
-				$obtenerCamas = $conn->prepare("SELECT residente.nombre, residente.apellido1, residente.apellido2, historico_res_hab.id_habitacion, historico_res_hab.fecha_fin, historico_res_hab.id_residente FROM historico_res_hab INNER JOIN residente ON residente.id_residente = historico_res_hab.id_residente WHERE historico_res_hab.id_habitacion = :habitacion;");
-				$obtenerCamas->bindParam(':habitacion', $idHabitacion);
-				$obtenerCamas->execute();
-				$camas=$obtenerCamas->fetchAll();
-				foreach($camas as $elementos){
-					$nombre = $elementos[0];
-					$apellido1 = $elementos[1];
-					$apellido2 = $elementos[2];
-					$nombreResidente = [$nombre,$apellido1,$apellido2];
-					$id_habitacion = $elementos[3];
-					$fecha_fin = $elementos[4];
-					$id_residente = $elementos[5];
-					if(is_null($fecha_fin)){
-						$objetosArray[$id_habitacion][$id_residente] = [join(" ",$nombreResidente)];
-					}
-				}
+//HE CAMBIADO LAS CONSULTAS, YA QUE UTILIZA MSQLI Y CON LO QUE VIMOS CON ALFONSO, ES DECIR, EL PREPARE, EL BINDPARAM, EL EXECUTE, ETC... NO CHANA
+function obtenerHabitaciones($conn,$piso){
+	$objetosArray = array();
+	$piso .= "%";
+	$sql = "SELECT * FROM habitacion WHERE id_habitacion LIKE '$piso' ORDER BY id_habitacion;";
+	$result = mysqli_query($conn,$sql);
+	$informacion = mysqli_fetch_all($result,MYSQLI_ASSOC);
+	foreach ($informacion as $row) {
+		$idHabitacion = $row['id_habitacion'];
+		$numeroCamas = $row['num_camas'];
+		$objetosArray[$idHabitacion] = [];
+		$sql2 = "SELECT residente.nombre, residente.apellido1, residente.apellido2, historico_res_hab.id_habitacion, historico_res_hab.fecha_fin, historico_res_hab.id_residente, residente.dni_residente FROM historico_res_hab INNER JOIN residente ON residente.id_residente = historico_res_hab.id_residente WHERE historico_res_hab.id_habitacion = '$idHabitacion';";
+		$result2 = mysqli_query($conn,$sql2);
+		$camas = mysqli_fetch_all($result2,MYSQLI_ASSOC);
+		foreach($camas as $elementos){
+			$nombre = $elementos['nombre'];
+			$apellido1 = $elementos['apellido1'];
+			$apellido2 = $elementos['apellido2'];
+			$nombreResidente = [$apellido1,$apellido2];
+			$id_habitacion = $elementos['id_habitacion'];
+			$fecha_fin = $elementos['fecha_fin'];
+			$id_residente = $elementos['id_residente'];
+			$dni_residente = $elementos['dni_residente'];
+			if(is_null($fecha_fin)){
+				$objetosArray[$id_habitacion][$id_residente] = [join(" ",$nombreResidente),$dni_residente];
 			}
-			return $objetosArray;
-		} catch (PDOException $ex) {
-			echo $ex->getMessage();
-			return false;
 		}
 	}
+	return $objetosArray;
+}
 
-
-
-
-
-	function mostrarTabla($array){
-	
-		foreach ($array as $idhabitacion => $elemento) {
-			$tabla .= "<div id='planta' class='".substr($idhabitacion,0,1)."'>";
-			$tabla .= "<div id='numeroHabitacion'>".$idhabitacion."</div>";
+function mostrarTabla($array){
+	$tabla = "<div style='display:grid;grid-template-columns:repeat(5, 300px);grid-gap:10px;'>";
+	foreach ($array as $idhabitacion => $elemento) {
+		$tabla .= "<div class='card'>";
+		$tabla .= "<div class='card-body'>";
+		$tabla .= "<h5 id='".substr($idhabitacion,0,1)."' class='card-title'>".$idhabitacion."</h5>";
+		if(!empty($elemento)){
 			foreach($elemento as $idresidente => $elemento){
-				$tabla .= "<div id='".$idresidente."'>".$elemento[0]."</div>";
+				$tabla .= "<div id='".$idresidente."PRUEBA'>".$elemento[0]."<br/><button id='".$idresidente."' class='boton_residente'>".$elemento[0]."<br/>".$elemento[1]."</button><br/><button id='constantesVitales'>Vitales</button><button id='eliminacion'>Eliminar</button><button id='alimentacion'>Alimentacion</button><button id='movilizacion'>Movilizacion</button><button id='higiene'>Higiene</button><button id='medicacion'>Medicación</button><button id='sleep'>Sueño/Descanso</button><button id='incidencia'>Incidencia</button></div>";
 			}
-			$tabla .= "</div>";
+		}else{
+			$tabla .= "<div><button id='altaResidente'>Alta Residente</button></div>";
 		}
-		return $tabla;
+		$tabla .= "</div></div>";
 	}
+	$tabla .= "</div>";
+	return $tabla;
+}
 
 ?>

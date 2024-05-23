@@ -4,7 +4,7 @@
 function cliente($myusername, $mypassword, $conn){
 	$sql = "SELECT id_personal FROM personal WHERE usuario = '$myusername' AND contrasena = '$mypassword'";
     $result = mysqli_query($conn,$sql);
-    $row = mysqli_fetch_array($result,MYSQLI_ASSOC);	
+    $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
 	return $row;
 }
 

@@ -13,43 +13,24 @@
 		<!-- <div class="col-xl-4 col-lg-3 col-md-3 col-sm-2"></div> -->
 		<!-- <div class="col-xl-4 col-lg-6 col-md-6 col-sm-8" > -->
 			<div class="input-group form-group padre_alinearCentroHijos" >
-					<!-- <select class="custom-select listadoResidentes dni-residente" hidden> <option> </option></select> -->
+					<select class="custom-select listadoResidentes dni-residente" hidden> <option> </option></select>
 						<div class="listadoResidentes_tabla">
-
 							<?php
-							// BORRAR LUEGO, lo uso en FOR
-							$listadoResidentesActivos
-							
-								// foreach($listadoResidentesActivos as $residente){
-									// $nombre_apellidos = $residente[2].' '.$residente[3];
-									// $dni = $residente[1];
-									// $id = $residente[0];
+								//include $_SERVER['DOCUMENT_ROOT']."/residencialeonardo.atwebpages.com/controllers/controlador_habitacion.php";
+								foreach($listadoResidentesActivos as $residente){
+									$nombre_apellidos = $residente[2].' '.$residente[3];
+									$dni = $residente[1];
+									$id = $residente[0];
+									echo '<button id="'.$id.'" class="boton_residente" >
+										'.$nombre_apellidos.'<br>'.$dni.'
+									</button>';
+								}
 							?>
-									<!-- <button id="<?php //echo $id;?>" class="boton_residente" > -->
-										<!-- <?php //echo $nombre_apellidos ?> <br> <?php //echo $dni ?> -->
-									<!-- </button> -->
-					
-							<?php 
-							// }
-							?>
-
-
-
-
-							
-
-
 						</div>
 
 						<?php
-							// Mis pruebas
-							echo "metete coño";
 							// include $_SERVER['DOCUMENT_ROOT']."/residencialeonardo.atwebpages.com/db/config.php";
 							include $_SERVER['DOCUMENT_ROOT']."/residencialeonardo.atwebpages.com/controllers/controlador_habitacion.php";
-							echo "metete coño";
-							
-							echo "metete coño";
-
 							// var_dump(array_values($listadoHabitaciones));
 
 							
