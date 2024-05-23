@@ -1185,13 +1185,16 @@ function cargarDatosResidente(){
 
 }
 
-function  busquedaIdResidente(modobusqueda,seccionMenu){
+function busquedaIdResidente(modobusqueda,seccionMenu){
 
 	let idResidente;
 		
-	if(modobusqueda=="busquedaDni")
+	if(modobusqueda=="busquedaDni"){
 		idResidente = $(seccionMenu).find($('.dni-residente')).val();
-	else if(modobusqueda=="busquedaApellidos")
+		console.log("PEPITO");
+		console.log($(seccionMenu).find($('.dni-residente')));
+		console.log(idResidente);
+	}else if(modobusqueda=="busquedaApellidos")
 		idResidente = $(seccionMenu).find($('.apellidos-residente')).val();
 	else if(modobusqueda=="busquedaExpediente")
 		idResidente = $(seccionMenu).find($('.expediente-residente')).val();

@@ -23,7 +23,162 @@ function cargarTablaConstanteVital(){
     }
 }
 
+function cargarTablaConstanteVital_idResidente(idResidente){
+ 
+    let modoBusqueda = $('#ver-menu-registro').find('.modoBusquedaResidente').val();
+
+    // let idResidente = busquedaIdResidente(modoBusqueda,$('#ver-menu-registro'));
+    
+    if(idResidente != undefined && idResidente != ""){
+        console.log("ABRETE COÑO")
+        console.log($('#ver-tabla-constante'))
+        $('#ver-tabla-constante').toggle(); //tabla descanso/sueño se muestra
+        $('#ver-tabla-descanso').hide();
+        $('#ver-tabla-eliminacion').hide();
+        $('#ver-tabla-alimentacion').hide();
+        $('#ver-tabla-movilizacion').hide();
+        $('#ver-tabla-higiene').hide();
+        $('#ver-tabla-incidencia').hide();
+        $('#ver-tabla-medicacion').hide();
+
+    }else{
+
+        $('#ver-tabla-constante').hide();
+        
+    }
+}
+
+
+function agregarConstante_idResidente(idResidente){
+
+    let resp_func = false
+    let modoBusqueda = $('#ver-menu-registro').find('.modoBusquedaResidente').val();
+
+    // let idResidente = busquedaIdResidente(modoBusqueda,$('#ver-menu-registro'));
+
+     let fecha= convertirFechaEspIngles(($('#fechaRegistroconstante').val()).substr(0,10))+($('#fechaRegistroconstante').val().substr(10,6))+":00";
+
+     
+     let turno_var=$("#turnos_constante").val();
+
+     let fc_var=$("#fc").val();
+     let ta_var=$("#ta").val();
+     let t_a_var=$("#t_a").val();
+     let glucemia_var=$("#glucemia").val();
+     let bh_entradas_var=$("#hidrico_select_entrada").val();
+     let entradas_var= bh_entradas_var.toString();
+
+     let bh_salidas_var=$("#hidrico_select_salida").val();
+     let salidas_var= bh_salidas_var.toString();
+
+     let sumaEntradas=$('#sumEntradas').val();//Suma de todas la entradas hídricas
+     let sumaSalidas=$('#sumSalidas').val();//Suma de todas la salidas hídricas
+     // let resultado_v=parseInt(sumaEntradas,10) - parseInt(sumaSalidas,10); 
+     let resultado_v=$('#balanceResultado').val(); //La resta calculada(resultado = sumaEntradas - sumaSalidas)
+ 
+         var postObj = {
+
+            id_residente : idResidente,
+
+            id_personal : idUsuario,
+
+            fecha : fecha,
+
+            fc : fc_var,
+
+            ta : ta_var,
+
+            t : t_a_var,
+
+            glucemia: glucemia_var,
+
+            id_entradas: entradas_var,
+
+            id_salidas: salidas_var,
+
+            turno: turno_var,
+
+            suma_entradas: sumaEntradas,
+
+            suma_salidas: sumaSalidas,
+
+            bh_resultado: resultado_v
+
+        }
+
+      
+
+
+        $.ajax({
+
+            url: '../controllers/registro.php?task=altaRegistroConstante',
+
+            type: "POST",
+
+            async: false,
+
+            data: postObj,
+
+            dataType: "html",
+
+            success: function(data) {
+
+                let respuesta =  $.parseJSON(data);
+
+                swal({
+
+                    title: "CREADA",
+
+                    text:  "Consulta creada correctamente",
+
+                    buttons: false,
+
+                    icon:  "success",
+
+                    timer: 1500,
+
+                });
+                
+                resp_func = true;
+
+
+
+        //    setTimeout('location.reload()',2000); 
+
+            },
+
+            error: function(data) {
+
+                console.log(data.responseText);
+                let respuesta =  $.parseJSON(data.responseText);
+                
+
+                swal({
+
+                    title: "ERROR",
+
+                    text:  respuesta.message,
+
+                    buttons: false,
+
+                    icon:  "error",
+
+                    timer: 2500,
+
+                });
+                
+                resp_func = false;
+
+            }
+
+        });
+        
+        
+        return resp_func;
+}
+
 function agregarConstante(){
+
     let resp_func = false
     let modoBusqueda = $('#ver-menu-registro').find('.modoBusquedaResidente').val();
 
@@ -116,13 +271,15 @@ function agregarConstante(){
 
 
 
-           // setTimeout('location.reload()',2000); 
+        //    setTimeout('location.reload()',2000); 
 
             },
 
             error: function(data) {
 
+                console.log(data.responseText);
                 let respuesta =  $.parseJSON(data.responseText);
+                
 
                 swal({
 

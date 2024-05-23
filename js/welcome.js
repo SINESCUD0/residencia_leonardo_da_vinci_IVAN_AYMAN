@@ -4625,7 +4625,6 @@ var tablas_registro_botonesGuardarSiguiente = $(tablas_registro).find("button[id
 //-----------***INICIO|1|REGISTRO CONSTANTES VITALES***--------------------------
 
     //CLICK BOTON CONSTANTES VITALES y OTROS PARÁMETROS EN EL MENU REGISTROS(menu_registro.php)
-
     $('#boton-constantes').click(function(){
 
 		$('#hidrico_select_entrada').val("");
@@ -4647,22 +4646,39 @@ var tablas_registro_botonesGuardarSiguiente = $(tablas_registro).find("button[id
 
     });
 
-    //CLICK BOTON Alta Constante 
+    //CLICK BOTON Alta Constante - A PARTIR DE AHORA SE NECESITAN BUCLES
+	// $('button[name="boton-agregar-constante"]').each(function(index){
+	// 	console.log("AYYY");
+	// 	$(this).click(function(){
+	// 		agregarConstante();
+	// 	});
+	// });
 
-    $('#boton-agregar-constante').click(function(){
+	// $('button[name="boton-agregar-constante-guardarSiguiente"]').each(function(index){
+	// 	$(this).click(function(){
+	// 		if ( agregarConstante() ){
+	// 			$("div#ver-tabla-constante").hide()
+	// 			$("div#ver-tabla-eliminacion").toggle()
+    //     	}
+	// 	});
+	// });
 
-		agregarConstante()
 
-	});
-    $('#boton-agregar-constante-guardarSiguiente').click(function(){
+
+    // $('#boton-agregar-constante').click(function(){
+
+	// 	agregarConstante()
+
+	// });
+    // $('#boton-agregar-constante-guardarSiguiente').click(function(){
 
         
-		if ( agregarConstante() ){
-        	$("div#ver-tabla-constante").hide()
-            $("div#ver-tabla-eliminacion").toggle()
-        }
+	// 	if ( agregarConstante() ){
+    //     	$("div#ver-tabla-constante").hide()
+    //         $("div#ver-tabla-eliminacion").toggle()
+    //     }
 
-	});
+	// });
 
 
 //-----------***FIN|1|REGISTRO CONSTANTES VITALES***--------------------------
