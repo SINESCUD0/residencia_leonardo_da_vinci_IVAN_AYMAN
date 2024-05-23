@@ -926,7 +926,7 @@ var tablaPersonalHistorico = function(){
 
 							tablapersonalactivo(); 
 
-						// setTimeout('location.reload()',2000);
+						setTimeout('location.reload()',2000);
 
 						break;
 
@@ -1258,7 +1258,7 @@ var tablaPersonalHistoricoLimpieza = function(){
 
                         tablapersonalactivoLimpieza(); 
 
-						// setTimeout('location.reload()',2000);
+						setTimeout('location.reload()',2000);
 
 						break;
 
@@ -1590,7 +1590,7 @@ var tablaPersonalHistoricoMantenimiento = function(){
 
                         tablapersonalactivoMantenimiento(); 
 
-						// setTimeout('location.reload()',2000);
+						setTimeout('location.reload()',2000);
 
 						break;
 
@@ -1928,7 +1928,7 @@ var tablaPersonalHistoricoResto = function(){
 
                         tablapersonalactivoResto(); 
 
-						// setTimeout('location.reload()',2000);
+						setTimeout('location.reload()',2000);
 
 						break;
 

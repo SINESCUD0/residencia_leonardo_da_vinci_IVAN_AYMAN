@@ -36,41 +36,10 @@ function change_select(event) {
             document.getElementsByName('habitaciones').forEach(element => {
                 element.innerHTML = texto;
             });
-            // console.log(xhr.responseText);
-            // console.log(document.getElementById('habitaciones'));
-            // console.log(xhr);
+            console.log(xhr.responseText);
+            console.log(document.getElementById('habitaciones'));
+            console.log(xhr);
             
-
-
-
-
-            console.log("llegue");
-            $('button[name="boton-constantes"]').each(function(index, element){
-                // console.log("AYYY")
-                $(element).click(function(){
-                    idResidente = $(element.parentNode).find(".boton_residente").attr("id");
-                    // agregarConstante_idResidente(idResidente)
-                    cargarTablaConstanteVital_idResidente(idResidente)
-                });
-            });
-        
-            $('button[name="boton-agregar-constante-guardarSiguiente"]').each(function(index){
-                console.log("OYYY");
-                $(this).click(function(){
-                    if ( agregarConstante() ){
-                        console.log("paso")
-                        $("div#ver-tabla-constante").hide()
-                        $("div#ver-tabla-eliminacion").toggle()
-                    }
-                });
-            });
-
-
-
-
-
-
-
         } else {
             console.error('Error en la solicitud. Estado:', xhr.status);
         }

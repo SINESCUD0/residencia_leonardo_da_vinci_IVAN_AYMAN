@@ -13,7 +13,7 @@
 	?>
 
 
-	<!-- <div class="seccionOcultableResidentes mt-1" id="seccionRegistros" style="display: none;">
+	<div class="seccionOcultableResidentes mt-1" id="seccionRegistros" style="display: none;">
 
 		<div class="row justify-content-center">
 			<div class="col-xl-3 col-lg-4 col-md-8 col-sm-9 ">
@@ -57,9 +57,9 @@
 				<button type="button" class="btn btn-primary rounded-0 font-weight-bold shadow p-3 mb-5 btn-block" id="boton-incidencia" >INCIDENCIA </button>
 			</div>
 
-		</div> -->
+		</div>
 <!-- **INICIO** |1| TABLA CONSTANTES VITALES Y OTROS PARAMETROS PARA RELLENAR -->
-		<div class="card shadow mb-4" id="ver-tabla-constante" style="margin-top: 20px;"> 
+		<div class="card shadow mb-4" id="ver-tabla-constante" style="display: none; margin-top: 20px;"> 
 		   <div class="col-xl-3 col-lg-3 col-md-10 col-sm-10" style="padding-top: 5px;">
 
               <a class="btn btn-warning" href="../ficheros-index/registros_en_blanco/registroConstante.pdf" target="_blank">PDF en blanco</a><br>

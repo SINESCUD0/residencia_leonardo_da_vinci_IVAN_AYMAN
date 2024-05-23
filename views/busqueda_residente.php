@@ -17,14 +17,14 @@
 						<div class="listadoResidentes_tabla">
 							<?php
 								//include $_SERVER['DOCUMENT_ROOT']."/residencialeonardo.atwebpages.com/controllers/controlador_habitacion.php";
-								// foreach($listadoResidentesActivos as $residente){
-								// 	$nombre_apellidos = $residente[2].' '.$residente[3];
-								// 	$dni = $residente[1];
-								// 	$id = $residente[0];
-								// 	echo '<button id="'.$id.'" class="boton_residente" >
-								// 		'.$nombre_apellidos.'<br>'.$dni.'
-								// 	</button>';
-								// }
+								foreach($listadoResidentesActivos as $residente){
+									$nombre_apellidos = $residente[2].' '.$residente[3];
+									$dni = $residente[1];
+									$id = $residente[0];
+									echo '<button id="'.$id.'" class="boton_residente" >
+										'.$nombre_apellidos.'<br>'.$dni.'
+									</button>';
+								}
 							?>
 						</div>
 

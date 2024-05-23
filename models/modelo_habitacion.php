@@ -38,18 +38,9 @@ function mostrarTabla($array){
 		$tabla .= "<div class='card'>";
 		$tabla .= "<div class='card-body'>";
 		$tabla .= "<h5 id='".substr($idhabitacion,0,1)."' class='card-title'>".$idhabitacion."</h5>";
-		var_dump($elemento);
 		if(!empty($elemento)){
 			foreach($elemento as $idresidente => $elemento){
-				$tabla .= "<div id='".$idresidente."PRUEBA'>".$elemento[0]."<br/><button id='".$idresidente."' class='boton_residente'>".$elemento[0]."<br/>".$elemento[1]."</button><br/><button name='boton-constantes'>Vitales</button>
-																																											<button name='boton-agregar-eliminacion'>Eliminar</button>
-																																											<button name='boton-agregar-alimentacion'>Alimentacion</button>
-																																											<button name='boton-agregar-movilizacion'>Movilizacion</button>
-																																											<button name='boton-agregar-higiene'>Higiene</button>
-																																											<button name='boton-agregar-medicacion'>Medicación</button>
-																																											<button name='boton-agregar-descanso'>Sueño/Descanso</button>
-																																											<button name='boton-agregar-incidencia'>Incidencia</button>
-																																										</div>";
+				$tabla .= "<div id='".$idresidente."PRUEBA'>".$elemento[0]."<br/><button id='".$idresidente."' class='boton_residente'>".$elemento[0]."<br/>".$elemento[1]."</button><br/><button id='constantesVitales'>Vitales</button><button id='eliminacion'>Eliminar</button><button id='alimentacion'>Alimentacion</button><button id='movilizacion'>Movilizacion</button><button id='higiene'>Higiene</button><button id='medicacion'>Medicación</button><button id='sleep'>Sueño/Descanso</button><button id='incidencia'>Incidencia</button></div>";
 			}
 		}else{
 			$tabla .= "<div><button id='altaResidente'>Alta Residente</button></div>";
