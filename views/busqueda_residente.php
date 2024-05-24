@@ -30,7 +30,16 @@
 
 						<?php
 							// include $_SERVER['DOCUMENT_ROOT']."/residencialeonardo.atwebpages.com/db/config.php";
+							
+							
+							
+							
+							
 							include $_SERVER['DOCUMENT_ROOT']."/residencialeonardo.atwebpages.com/controllers/controlador_habitacion.php";
+
+
+
+
 							// var_dump(array_values($listadoHabitaciones));
 
 							

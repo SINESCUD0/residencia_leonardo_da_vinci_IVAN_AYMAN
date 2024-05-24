@@ -1,4 +1,3 @@
-console.log("HOLA");
 // document.addEventListener('DOMContentLoaded', function() {
 //     var select = document.getElementById('selectPiso');
 //     select.addEventListener('change', function() {
