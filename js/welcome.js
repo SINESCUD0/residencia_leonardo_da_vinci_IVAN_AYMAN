@@ -4626,26 +4626,27 @@ var tablas_registro_botonesGuardarSiguiente = $(tablas_registro).find("button[id
 
     //CLICK BOTON CONSTANTES VITALES y OTROS PARÁMETROS EN EL MENU REGISTROS(menu_registro.php)
 
-    $('#boton-constantes').click(function(){
 
-		$('#hidrico_select_entrada').val("");
-		$('#otrosEntrada_true').val("");
+    // $('#boton-constantes').click(function(){
 
-		$('#hidrico_select_salida').val("");
-		$('#diuresisEntrada_true').val("");
-		$('#otrosSalida_true').val("");
+	// 	$('#hidrico_select_entrada').val("");
+	// 	$('#otrosEntrada_true').val("");
 
-        $('#sumEntradas').val("")
-		$('#sumSalidas').val("")
-        $("#balanceResultado").val("");
+	// 	$('#hidrico_select_salida').val("");
+	// 	$('#diuresisEntrada_true').val("");
+	// 	$('#otrosSalida_true').val("");
 
-		$('#cajaTextOtros').hide(); 
-		$('#cajaTextDiuresis').hide(); 
-		$('#cajaTextSalidaOtros').hide(); 
+    //     $('#sumEntradas').val("")
+	// 	$('#sumSalidas').val("")
+    //     $("#balanceResultado").val("");
 
-    	cargarTablaConstanteVital();
+	// 	$('#cajaTextOtros').hide(); 
+	// 	$('#cajaTextDiuresis').hide(); 
+	// 	$('#cajaTextSalidaOtros').hide(); 
 
-    });
+    // 	cargarTablaConstanteVital();
+
+    // });
 
     //CLICK BOTON Alta Constante 
 
@@ -4833,11 +4834,19 @@ var tablas_registro_botonesGuardarSiguiente = $(tablas_registro).find("button[id
 //-----------***FIN|7|REGISTRO SUEÑO/DESCANSO***--------------------------
 
    //-----------***INICIO|8|REGISTRO INCIDENCIA***--------------------------
-    $('#boton-incidencia').click(function(){
-		
-    	cargarTablaIncidencia();
 
-    });
+   $('button[name="boton-incidencia"]').each(function(index, element){
+	console.log("PEPE")	
+	console.log(element)
+		// element.click(function(){
+		// 	console.log("hola")
+		// })
+   })
+    // $('#boton-incidencia').click(function(){
+		
+    // 	cargarTablaIncidencia();
+
+    // });
 
     	
     $('#boton-agregar-incidencia').click(function(){

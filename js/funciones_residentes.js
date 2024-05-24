@@ -860,10 +860,10 @@ function bajaResidente(){
 	});
 }
 
-function cargarDatosResidente(){
+function cargarDatosResidente(idResidente){
 	
 	let modoBusqueda = $('#ver-modificar-residente').find('.modoBusquedaResidente').val();
-	let idResidente = busquedaIdResidente(modoBusqueda,$('#ver-modificar-residente'));
+	// let idResidente = busquedaIdResidente(modoBusqueda,$('#ver-modificar-residente'));
 	let respuesta;
 	let datosResidente;
 	let $form = $('#seccionModificarResidente');

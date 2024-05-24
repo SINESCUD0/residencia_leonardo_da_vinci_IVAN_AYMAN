@@ -1,5 +1,5 @@
 <script src="/residencialeonardo.atwebpages.com/js/habitacion.js" type="text/javascript"></script>
-<form action="" method="post">
+<!-- <form action="" method="post"> -->
 	<select onchange='change_select(event)' name='piso' id="selectPiso">
 		<option value="1">Planta 1</option>
 		<option value="2">Planta 2</option>
@@ -10,4 +10,4 @@
 		echo $tabla;
 	?>
 	</div>
-</form>
+<!-- </form> -->

@@ -40,7 +40,76 @@ function mostrarTabla($array){
 		$tabla .= "<h5 id='".substr($idhabitacion,0,1)."' class='card-title'>".$idhabitacion."</h5>";
 		if(!empty($elemento)){
 			foreach($elemento as $idresidente => $elemento){
-				$tabla .= "<div id='".$idresidente."PRUEBA'>".$elemento[0]."<br/><button id='".$idresidente."' class='boton_residente'>".$elemento[0]."<br/>".$elemento[1]."</button><br/><button id='constantesVitales'>Vitales</button><button id='eliminacion'>Eliminar</button><button id='alimentacion'>Alimentacion</button><button id='movilizacion'>Movilizacion</button><button id='higiene'>Higiene</button><button id='medicacion'>Medicación</button><button id='sleep'>Sueño/Descanso</button><button id='incidencia'>Incidencia</button></div>";
+				var_dump($elemento);
+				$tabla .= "<div id='".$idresidente."PRUEBA' >".$elemento[0]."<br/><button id='".$idresidente."' class='boton_residente'>".$elemento[0]."<br/>".$elemento[1]."</button><br/>
+																																												<button 
+																																												onclick = \"(()=> {
+
+																																													id_de_caja = $(this).parent().find('button[id]').attr('id')
+																																													cargarDatosResidente(id_de_caja)
+																																													
+																																													$('.boton_residente').val(id_de_caja)
+																																													$('.listadoResidentes').trigger('change')
+
+																																													$('#fechaBajaResidente').val('');
+																																													$('#motivoBajaResidente').val('');
+																																													$('#textoOtrasBajaResidente').val('');
+																																													$('#otrasBajaResidente').hide();
+																																													$('#boton-ver-datos').hide();
+																																													$('#ver-tabla-consulta').hide();
+																																													$('#ver-tabla-datos').hide();		
+																																													if($(this).val() == ''){
+																																														console.log('vaya...')
+																																													$('.seccionOcultableResidentes').hide();	
+																																													$('#boton-ver-datos').hide();
+																																													}
+																																													else{
+																																													$('.seccionOcultableResidentes').show();
+																																													$('#boton-ver-datos').show();
+																																													}			
+
+
+
+																																												})()\"
+
+
+
+
+
+																																												name='boton-constantes'>Vitales</button>
+																																															
+
+
+
+																																												<button name='boton-eliminacion'>Eliminar</button>
+
+
+
+																																												<button name='boton-alimentacion'>Alimentacion</button>
+
+
+
+																																												<button name='boton-movilizacion'>Movilizacion</button>
+
+
+
+																																												<button name='boton-higiene'>Higiene</button>
+
+
+
+																																												<button name='boton-medicacion'>Medicación</button>
+
+
+
+																																												<button name='boton-descanso'>Sueño/Descanso</button>
+
+
+
+																																												<button name='boton-incidencia'>Incidencia</button>
+
+
+
+																																											</div>";
 			}
 		}else{
 			$tabla .= "<div><button id='altaResidente'>Alta Residente</button></div>";

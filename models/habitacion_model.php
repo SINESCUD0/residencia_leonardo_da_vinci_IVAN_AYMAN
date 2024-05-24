@@ -54,11 +54,19 @@ function habitacionesLibresPorTipo($conn,$numCamas){
 function consultarHabitacion($conn,$idResidente,$order,$limit){
 	$response=array();
 	$datos=array();
+	print($idResidente);
+	print("<br>");
+	print($order);
+	print("<br>");
+	print($limit);
+	print("<br>");
+
 	$sql = "SELECT habitacion.id_habitacion,habitacion.num_camas,personal.nombre,personal.apellido1,personal.apellido2  
 		FROM habitacion INNER JOIN historico_res_hab ON (habitacion.id_habitacion = historico_res_hab.id_habitacion) 
 		INNER JOIN residente ON (historico_res_hab.id_residente = residente.id_residente)
 		LEFT JOIN personal ON(residente.id_personal_responsable = personal.id_personal ) 
-		WHERE residente.id_residente= $idResidente AND historico_res_hab.fecha_fin IS NULL;";
+		WHERE residente.id_residente= $idResidente
+		AND historico_res_hab.fecha_fin IS NULL;";
 	$resultado=mysqli_query($conn,$sql);
 
 	if($resultado){
