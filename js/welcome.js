@@ -4600,256 +4600,261 @@ $('.habitacion-residente').change(function(){
 var tablas_registro = $("div[id='seccionRegistros'] > div[id^='ver-tabla-']") // Recojo las tablas que empiezen por...
 var tablas_registro_botonesGuardarSiguiente = $(tablas_registro).find("button[id$='-guardarSiguiente']") // Recojo los botones acabados en...
 
-//tablas_registro_botonesGuardarSiguiente.last().text("Guardar y Salir") // El ultimo elemento le cambio de nombre. Estética
+tablas_registro_botonesGuardarSiguiente.last().text("Guardar y Salir") // El ultimo elemento le cambio de nombre. Estética
 
-//$(tablas_registro_botonesGuardarSiguiente).each(function(index){
+console.log("UY")
+$(tablas_registro_botonesGuardarSiguiente).each(function(index){
         
-  //  let id_sin_guardarSiguiente = $( this ).attr("id").replace("-guardarSiguiente", "")
+	console.log("OY")
+	console.log(this)
+   let id_sin_guardarSiguiente = $( this ).attr("id").replace("-guardarSiguiente", "")
         
-//	$( this ).click(function(){
+	$( this ).click(function(){
+
+		console.log("AY")
             
-    //    let boton_alta_correspondiente = $(tablas_registro_botonesGuardarSiguiente).siblings().eq(0)
-  //         console.log(boton_alta_correspondiente)
+       let boton_alta_correspondiente = $(tablas_registro_botonesGuardarSiguiente).siblings().eq(0)
+          console.log(boton_alta_correspondiente)
         
-//        $(tablas_registro[index]).hide() // Cierro la tabla actual
-      //  
-    //    if ( $(tablas_registro[index+1]) != null ) // En la última posición + 1 devuelve null, así que lo tomo en cuenta
-  //      	$(tablas_registro[index+1]).toggle() // Abro la siguiente
-//    })
-//})
+       $(tablas_registro[index]).hide() // Cierro la tabla actual
+       
+       if ( $(tablas_registro[index+1]) != null ) // En la última posición + 1 devuelve null, así que lo tomo en cuenta
+       	$(tablas_registro[index+1]).toggle() // Abro la siguiente
+   })
+})
 
 
 
 
 
-//-----------***INICIO|1|REGISTRO CONSTANTES VITALES***--------------------------
+// //-----------***INICIO|1|REGISTRO CONSTANTES VITALES***--------------------------
 
-    //CLICK BOTON CONSTANTES VITALES y OTROS PARÁMETROS EN EL MENU REGISTROS(menu_registro.php)
+//     //CLICK BOTON CONSTANTES VITALES y OTROS PARÁMETROS EN EL MENU REGISTROS(menu_registro.php)
 
-    $('#boton-constantes').click(function(){
+//     $('#boton-constantes').click(function(){
 
-		$('#hidrico_select_entrada').val("");
-		$('#otrosEntrada_true').val("");
+// 		$('#hidrico_select_entrada').val("");
+// 		$('#otrosEntrada_true').val("");
 
-		$('#hidrico_select_salida').val("");
-		$('#diuresisEntrada_true').val("");
-		$('#otrosSalida_true').val("");
+// 		$('#hidrico_select_salida').val("");
+// 		$('#diuresisEntrada_true').val("");
+// 		$('#otrosSalida_true').val("");
 
-        $('#sumEntradas').val("")
-		$('#sumSalidas').val("")
-        $("#balanceResultado").val("");
+//         $('#sumEntradas').val("")
+// 		$('#sumSalidas').val("")
+//         $("#balanceResultado").val("");
 
-		$('#cajaTextOtros').hide(); 
-		$('#cajaTextDiuresis').hide(); 
-		$('#cajaTextSalidaOtros').hide(); 
+// 		$('#cajaTextOtros').hide(); 
+// 		$('#cajaTextDiuresis').hide(); 
+// 		$('#cajaTextSalidaOtros').hide(); 
 
-    	cargarTablaConstanteVital();
+//     	cargarTablaConstanteVital();
 
-    });
+//     });
 
-    //CLICK BOTON Alta Constante 
+//     //CLICK BOTON Alta Constante 
 
-    $('#boton-agregar-constante').click(function(){
+//     $('#boton-agregar-constante').click(function(){
 
-		agregarConstante()
+// 		agregarConstante()
 
-	});
-    $('#boton-agregar-constante-guardarSiguiente').click(function(){
+// 	});
+//     $('#boton-agregar-constante-guardarSiguiente').click(function(){
 
         
-		if ( agregarConstante() ){
-        	$("div#ver-tabla-constante").hide()
-            $("div#ver-tabla-eliminacion").toggle()
-        }
+// 		if ( agregarConstante() ){
+//         	$("div#ver-tabla-constante").hide()
+//             $("div#ver-tabla-eliminacion").toggle()
+//         }
 
-	});
-
-
-//-----------***FIN|1|REGISTRO CONSTANTES VITALES***--------------------------
-
-//-----------***INICIO|2|REGISTRO ELIMINACION***--------------------------
-
-    //CLICK BOTON ELIMINACION EN EL MENU REGISTROS(menu_registro.php)
-
-    $('#boton-eliminacion').click(function(){
-
-    	cargarTablaEliminacion();
-
-    });
-
-    	//CLICK BOTON Alta ELIMINACION (REGISTRO ELIMINACION)
-
-    $('#boton-agregar-eliminacion').click(function(){
-
-		agregarEliminacion();
-
-	});
+// 	});
 
 
-    $('#boton-agregar-eliminacion-guardarSiguiente').click(function(){
+// //-----------***FIN|1|REGISTRO CONSTANTES VITALES***--------------------------
 
-        if ( agregarEliminacion() ){
-        	$("div#ver-tabla-eliminacion").hide()
-            $("div#ver-tabla-alimentacion").toggle()
-        }
+// //-----------***INICIO|2|REGISTRO ELIMINACION***--------------------------
 
-	});
+//     //CLICK BOTON ELIMINACION EN EL MENU REGISTROS(menu_registro.php)
 
+//     $('#boton-eliminacion').click(function(){
 
+//     	cargarTablaEliminacion();
 
-	//-----------***FIN|2|REGISTRO ELIMINACION***--------------------------
+//     });
 
-	//-----------***INICIO|3|REGISTRO ALIMENTACION***--------------------------
-    $('#boton-alimentacion').click(function(){
+//     	//CLICK BOTON Alta ELIMINACION (REGISTRO ELIMINACION)
 
-    	cargarTablaAlimentacion();
+//     $('#boton-agregar-eliminacion').click(function(){
 
-    });
+// 		agregarEliminacion();
 
-    	
-    $('#boton-agregar-alimentacion').click(function(){
-
-		agregarAlimentacion();
-
-	});
-
-    $('#boton-agregar-alimentacion-guardarSiguiente').click(function(){
-
-		if ( agregarAlimentacion() ) {
-        	$("div#ver-tabla-alimentacion").hide()
-            $("div#ver-tabla-movilizacion").toggle()
-        }
-
-	});
+// 	});
 
 
-	//-----------***FIN|3|REGISTRO ALIMENTACION***--------------------------
+//     $('#boton-agregar-eliminacion-guardarSiguiente').click(function(){
 
-	//-----------***INICIO|4|REGISTRO MOVILIZACION***--------------------------
-    $('#boton-movilizacion').click(function(){
+//         if ( agregarEliminacion() ){
+//         	$("div#ver-tabla-eliminacion").hide()
+//             $("div#ver-tabla-alimentacion").toggle()
+//         }
 
-    	cargarTablaMovilizacion();
+// 	});
 
-    });
+
+
+// 	//-----------***FIN|2|REGISTRO ELIMINACION***--------------------------
+
+// 	//-----------***INICIO|3|REGISTRO ALIMENTACION***--------------------------
+//     $('#boton-alimentacion').click(function(){
+
+//     	cargarTablaAlimentacion();
+
+//     });
 
     	
-    $('#boton-agregar-movilizacion').click(function(){
+//     $('#boton-agregar-alimentacion').click(function(){
 
-		agregarMovilizacion();
+// 		agregarAlimentacion();
 
-	});
+// 	});
 
-    $('#boton-agregar-movilizacion-guardarSiguiente').click(function(){
+//     $('#boton-agregar-alimentacion-guardarSiguiente').click(function(){
 
-        if ( agregarMovilizacion() ) {
-        	$("div#ver-tabla-movilizacion").hide()
-            $("div#ver-tabla-higiene").toggle()
-        }
+// 		if ( agregarAlimentacion() ) {
+//         	$("div#ver-tabla-alimentacion").hide()
+//             $("div#ver-tabla-movilizacion").toggle()
+//         }
+
+// 	});
 
 
-	});
+// 	//-----------***FIN|3|REGISTRO ALIMENTACION***--------------------------
 
-	//-----------***FIN|4|REGISTRO MOVILIZACION***--------------------------
+// 	//-----------***INICIO|4|REGISTRO MOVILIZACION***--------------------------
+//     $('#boton-movilizacion').click(function(){
 
-	//-----------***INICIO|5|REGISTRO HIGIENE***--------------------------
-    $('#boton-higiene').click(function(){
+//     	cargarTablaMovilizacion();
 
-    	cargarTablaHigiene();
-
-    });
-
-    	
-    $('#boton-agregar-higiene').click(function(){
-
-		agregarHigiene();
-
-	});
-
-    $('#boton-agregar-higiene-guardarSiguiente').click(function(){
-
-        if (agregarHigiene()) {
-        	$("div#ver-tabla-higiene").hide()
-            $("div#ver-tabla-medicacion").toggle()
-        }
-
-	});
-
-	//-----------***FIN|5|REGISTRO HIGIENE***--------------------------
-
-	//-----------***INICIO|6|REGISTRO MEDICACION***--------------------------
-    $('#boton-medicacion').click(function(){
-
-    	cargarTablaMedicacion();
-
-    });
+//     });
 
     	
-    $('#boton-agregar-medicacion').click(function(){
+//     $('#boton-agregar-movilizacion').click(function(){
 
-		agregarMedicacion();
+// 		agregarMovilizacion();
 
-	});
+// 	});
 
-    $('#boton-agregar-medicacion-guardarSiguiente').click(function(){
+//     $('#boton-agregar-movilizacion-guardarSiguiente').click(function(){
 
-		if (agregarMedicacion()) {
-        	$("div#ver-tabla-medicacion").hide()
-            $("div#ver-tabla-descanso").toggle()
-        }
-
-	});
+//         if ( agregarMovilizacion() ) {
+//         	$("div#ver-tabla-movilizacion").hide()
+//             $("div#ver-tabla-higiene").toggle()
+//         }
 
 
-	//-----------***FIN|6|REGISTRO MEDICACION***--------------------------
+// 	});
 
-	//-----------***INICIO|7| REGISTRO SUEÑO/DESCANSO***--------------------------
+// 	//-----------***FIN|4|REGISTRO MOVILIZACION***--------------------------
 
-    //CLICK BOTON SUEÑO/DESCANSO EN EL MENU REGISTROS(menu_registro.php)
+// 	//-----------***INICIO|5|REGISTRO HIGIENE***--------------------------
+//     $('#boton-higiene').click(function(){
 
-    $('#boton-descanso').click(function(){
+//     	cargarTablaHigiene();
 
-    	cargarTablaDescanso();
+//     });
 
-    });
+    	
+//     $('#boton-agregar-higiene').click(function(){
 
-    	//CLICK BOTON Alta Descanso (REGISTRO SUEÑO/DESCANSO)
+// 		agregarHigiene();
 
-    $('#boton-agregar-descanso').click(function(){
+// 	});
 
-		agregarDescanso();
+//     $('#boton-agregar-higiene-guardarSiguiente').click(function(){
 
-	});
+//         if (agregarHigiene()) {
+//         	$("div#ver-tabla-higiene").hide()
+//             $("div#ver-tabla-medicacion").toggle()
+//         }
 
-    $('#boton-agregar-descanso-guardarSiguiente').click(function(){
+// 	});
 
-		if (agregarDescanso()) {
-        	$("div#ver-tabla-descanso").hide()
-            $("div#ver-tabla-incidencia").toggle()
-        }
+// 	//-----------***FIN|5|REGISTRO HIGIENE***--------------------------
 
-	});
+// 	//-----------***INICIO|6|REGISTRO MEDICACION***--------------------------
+//     $('#boton-medicacion').click(function(){
+
+//     	cargarTablaMedicacion();
+
+//     });
+
+    	
+//     $('#boton-agregar-medicacion').click(function(){
+
+// 		agregarMedicacion();
+
+// 	});
+
+//     $('#boton-agregar-medicacion-guardarSiguiente').click(function(){
+
+// 		if (agregarMedicacion()) {
+//         	$("div#ver-tabla-medicacion").hide()
+//             $("div#ver-tabla-descanso").toggle()
+//         }
+
+// 	});
 
 
-//-----------***FIN|7|REGISTRO SUEÑO/DESCANSO***--------------------------
+// 	//-----------***FIN|6|REGISTRO MEDICACION***--------------------------
 
-   //-----------***INICIO|8|REGISTRO INCIDENCIA***--------------------------
-    $('#boton-incidencia').click(function(){
+// 	//-----------***INICIO|7| REGISTRO SUEÑO/DESCANSO***--------------------------
+
+//     //CLICK BOTON SUEÑO/DESCANSO EN EL MENU REGISTROS(menu_registro.php)
+
+//     $('#boton-descanso').click(function(){
+
+//     	cargarTablaDescanso();
+
+//     });
+
+//     	//CLICK BOTON Alta Descanso (REGISTRO SUEÑO/DESCANSO)
+
+//     $('#boton-agregar-descanso').click(function(){
+
+// 		agregarDescanso();
+
+// 	});
+
+//     $('#boton-agregar-descanso-guardarSiguiente').click(function(){
+
+// 		if (agregarDescanso()) {
+//         	$("div#ver-tabla-descanso").hide()
+//             $("div#ver-tabla-incidencia").toggle()
+//         }
+
+// 	});
+
+
+// //-----------***FIN|7|REGISTRO SUEÑO/DESCANSO***--------------------------
+
+//    //-----------***INICIO|8|REGISTRO INCIDENCIA***--------------------------
+//     $('#boton-incidencia').click(function(){
 		
-    	cargarTablaIncidencia();
+//     	cargarTablaIncidencia();
 
-    });
+//     });
 
     	
-    $('#boton-agregar-incidencia').click(function(){
+//     $('#boton-agregar-incidencia').click(function(){
 
-		agregarIncidencia();
+// 		agregarIncidencia();
 
-	});
+// 	});
 
-    $('#boton-agregar-incidencia-guardarSalir').click(function(){
+//     $('#boton-agregar-incidencia-guardarSalir').click(function(){
 
-		agregarIncidencia();
+// 		agregarIncidencia();
 
-	});
+// 	});
 
-	//-----------***FIN|8|REGISTRO INCIDENCIA***--------------------------
+// 	//-----------***FIN|8|REGISTRO INCIDENCIA***--------------------------

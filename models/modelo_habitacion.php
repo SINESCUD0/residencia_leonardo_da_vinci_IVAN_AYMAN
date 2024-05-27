@@ -40,10 +40,30 @@ function mostrarTabla($array){
 		$tabla .= "<h5 id='".substr($idhabitacion,0,1)."' class='card-title'>".$idhabitacion."</h5>";
 		if(!empty($elemento)){
 			foreach($elemento as $idresidente => $elemento){
-				$tabla .= "<div id='".$idresidente."PRUEBA'>".$elemento[0]."<br/><button id='".$idresidente."' class='boton_residente'>".$elemento[0]."<br/>".$elemento[1]."</button><br/><button id='constantesVitales'>Vitales</button><button id='eliminacion'>Eliminar</button><button id='alimentacion'>Alimentacion</button><button id='movilizacion'>Movilizacion</button><button id='higiene'>Higiene</button><button id='medicacion'>Medicación</button><button id='sleep'>Sueño/Descanso</button><button id='incidencia'>Incidencia</button></div>";
+				// CORRECTO
+				// $tabla .= "<div id='".$idresidente."PRUEBA'>".$elemento[0]."<br/><button id='".$idresidente."' class='boton_residente'>".$elemento[0]."<br/>".$elemento[1]."</button><br/><button id='constantesVitales'>Vitales</button><button id='eliminacion'>Eliminar</button><button id='alimentacion'>Alimentacion</button><button id='movilizacion'>Movilizacion</button><button id='higiene'>Higiene</button><button id='medicacion'>Medicación</button><button id='sleep'>Sueño/Descanso</button><button id='incidencia'>Incidencia</button></div>";
+				
+				// PRUEBAS
+					// Información oculta útil
+					$tabla .= "<input type='hidden' id='dni' value='$elemento[1]'/> <input type='hidden' id='id_residente' value='$idresidente'/>";
+					$tabla .= "<div id='".$idresidente."'>".$elemento[0]."<br/><input type='button' id='".$idresidente."' class='boton_residente' value='$elemento[0]'><br/>".$elemento[1]."</input><br/>
+																																																<input type='button' value='Vitales' id='boton-constantes'></input>
+																																																<input type='button' value='Eliminar' id='boton-eliminacion'></input>
+																																																<input type='button' value='Alimentacion' id='boton-alimentacion'></input>
+																																																<input type='button' value='Movilizacion' id='boton-movilizacion'></input>
+																																																<input type='button' value='Higiene' id='boton-higiene'></input>
+																																																<input type='button' value='Medicación' id='boton-medicacion'></input>
+																																																<input type='button' value='Sueño/Descanso' id='boton-descanso'></input>
+																																																<input type='button' value='Incidencia' id='boton-incidencia'></input></div>";
+				// FIN PRUEBAS
 			}
 		}else{
-			$tabla .= "<div><button id='altaResidente'>Alta Residente</button></div>";
+			// CORRECTO
+			// $tabla .= "<div><button id='altaResidente'>Alta Residente</button></div>";
+
+			// PRUEBAS
+			$tabla .= "<div><input type='button' value='Alta Residente' id='altaResidente'></input></div>";
+			// FIN PRUEBAS
 		}
 		$tabla .= "</div></div>";
 	}

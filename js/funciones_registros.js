@@ -7,6 +7,8 @@ function cargarTablaConstanteVital(){
     
     if(idResidente != undefined && idResidente != ""){
 
+        console.log("WI")
+
         $('#ver-tabla-constante').toggle(); //tabla descanso/sueño se muestra
         $('#ver-tabla-descanso').hide();
         $('#ver-tabla-eliminacion').hide();
@@ -23,11 +25,37 @@ function cargarTablaConstanteVital(){
     }
 }
 
-function agregarConstante(){
-    let resp_func = false
-    let modoBusqueda = $('#ver-menu-registro').find('.modoBusquedaResidente').val();
 
-    let idResidente = busquedaIdResidente(modoBusqueda,$('#ver-menu-registro'));
+// PRUEBAS
+function cargarTablaConstanteVital_id(idResidente){
+
+    
+    if(idResidente != undefined && idResidente != ""){
+
+        console.log("WI")
+
+        $('#ver-tabla-constante').toggle(); //tabla descanso/sueño se muestra
+        $('#ver-tabla-descanso').hide();
+        $('#ver-tabla-eliminacion').hide();
+        $('#ver-tabla-alimentacion').hide();
+        $('#ver-tabla-movilizacion').hide();
+        $('#ver-tabla-higiene').hide();
+        $('#ver-tabla-incidencia').hide();
+        $('#ver-tabla-medicacion').hide();
+
+    }else{
+
+        $('#ver-tabla-constante').hide();
+        
+    }
+}
+// FIN PRUEBAS
+
+function agregarConstante(idResidente){
+    let resp_func = false
+    // let modoBusqueda = $('#ver-menu-registro').find('.modoBusquedaResidente').val();
+
+    // let idResidente = busquedaIdResidente(modoBusqueda,$('#ver-menu-registro'));
 
      let fecha= convertirFechaEspIngles(($('#fechaRegistroconstante').val()).substr(0,10))+($('#fechaRegistroconstante').val().substr(10,6))+":00";
 
@@ -449,11 +477,7 @@ function tablaRegistroConstantes_2(id,fechaDesde, fechaHasta){
 
 
 // -------------------------**|2|ELIMINACION**-----------------------
-function cargarTablaEliminacion(){
- 
-    let modoBusqueda = $('#ver-menu-registro').find('.modoBusquedaResidente').val();
-
-    let idResidente = busquedaIdResidente(modoBusqueda,$('#ver-menu-registro'));
+function cargarTablaEliminacion(idResidente){
     
     if(idResidente != undefined && idResidente != ""){
 
@@ -473,10 +497,8 @@ function cargarTablaEliminacion(){
     }
 }
 
-function agregarEliminacion(){
+function agregarEliminacion(idResidente){
     let resp_func = false
-    let modoBusqueda = $('#ver-menu-registro').find('.modoBusquedaResidente').val();
-    let idResidente = busquedaIdResidente(modoBusqueda,$('#ver-menu-registro'));
    
      let fecha= convertirFechaEspIngles(($('#fechaRegistroeliminacion').val()).substr(0,10))+($('#fechaRegistroeliminacion').val().substr(10,6))+":00";
   
@@ -891,11 +913,7 @@ function tablaRegistroEliminacion_2(id,fechaDesde, fechaHasta){
 
 
 // -------------------------**|3|ALIMENTACION**-----------------------
-function cargarTablaAlimentacion(){
- 
-    let modoBusqueda = $('#ver-menu-registro').find('.modoBusquedaResidente').val();
-
-    let idResidente = busquedaIdResidente(modoBusqueda,$('#ver-menu-registro'));
+function cargarTablaAlimentacion(idResidente){
     
     if(idResidente != undefined && idResidente != ""){
 
@@ -914,12 +932,8 @@ function cargarTablaAlimentacion(){
     }
 }
 
-function agregarAlimentacion(){
+function agregarAlimentacion(idResidente){
         let resp_func = false
-    let modoBusqueda = $('#ver-menu-registro').find('.modoBusquedaResidente').val();
-    let idResidente = busquedaIdResidente(modoBusqueda,$('#ver-menu-registro'));
-    
-   
      let fecha= convertirFechaEspIngles(($('#fechaRegistroalimentacion').val()).substr(0,10))+($('#fechaRegistroalimentacion').val().substr(10,6))+":00";
   
    
@@ -1296,12 +1310,8 @@ function tablaRegistroAlimentacion_2(id,fechaDesde, fechaHasta){
 //ºº--HISTORIAL ALIMENTACION--
 //---------------------------------------------------------------------------------------------------------
 // -------------------------**|4|MOVILIZACION**-----------------------
-function cargarTablaMovilizacion(){
+function cargarTablaMovilizacion(idResidente){
  
-    let modoBusqueda = $('#ver-menu-registro').find('.modoBusquedaResidente').val();
-
-    let idResidente = busquedaIdResidente(modoBusqueda,$('#ver-menu-registro'));
-    
     if(idResidente != undefined && idResidente != ""){
 
         $('#ver-tabla-movilizacion').toggle(); //tabla se muestra
@@ -1319,11 +1329,8 @@ function cargarTablaMovilizacion(){
     }
 }
 
-function agregarMovilizacion(){
+function agregarMovilizacion(idResidente){
       let resp_func = false
-    let modoBusqueda = $('#ver-menu-registro').find('.modoBusquedaResidente').val();
-    let idResidente = busquedaIdResidente(modoBusqueda,$('#ver-menu-registro'));
-
    
      let fecha= convertirFechaEspIngles(($('#fechaRegistromovilizacion').val()).substr(0,10))+($('#fechaRegistromovilizacion').val().substr(10,6))+":00";
   
@@ -1739,11 +1746,7 @@ function tablaRegistroMovilizacion_2(id,fechaDesde, fechaHasta){
 
 
 // -------------------------**|5|HIGIENE**-----------------------
-function cargarTablaHigiene(){
- 
-    let modoBusqueda = $('#ver-menu-registro').find('.modoBusquedaResidente').val();
-
-    let idResidente = busquedaIdResidente(modoBusqueda,$('#ver-menu-registro'));
+function cargarTablaHigiene(idResidente){
     
     if(idResidente != undefined && idResidente != ""){
 
@@ -1762,12 +1765,9 @@ function cargarTablaHigiene(){
     }
 }
 
-function agregarHigiene(){
+function agregarHigiene(idResidente){
         let resp_func = false
-    let modoBusqueda = $('#ver-menu-registro').find('.modoBusquedaResidente').val();
-    let idResidente = busquedaIdResidente(modoBusqueda,$('#ver-menu-registro'));
   
-   
      let fecha= convertirFechaEspIngles(($('#fechaRegistrohigiene').val()).substr(0,10))+($('#fechaRegistrohigiene').val().substr(10,6))+":00";
     
    
@@ -2212,11 +2212,7 @@ function tablaRegistroHigiene_2(id,fechaDesde, fechaHasta){
 
 
 // -------------------------**|6|MEDICACION**-----------------------
-function cargarTablaMedicacion(){
- 
-    let modoBusqueda = $('#ver-menu-registro').find('.modoBusquedaResidente').val();
-
-    let idResidente = busquedaIdResidente(modoBusqueda,$('#ver-menu-registro'));
+function cargarTablaMedicacion(idResidente){
     
     if(idResidente != undefined && idResidente != ""){
 
@@ -2234,10 +2230,8 @@ function cargarTablaMedicacion(){
     }
 }
 
-function agregarMedicacion(){
+function agregarMedicacion(idResidente){
         let resp_func = false
-    let modoBusqueda = $('#ver-menu-registro').find('.modoBusquedaResidente').val();
-    let idResidente = busquedaIdResidente(modoBusqueda,$('#ver-menu-registro'));
    
    
      let fecha= convertirFechaEspIngles(($('#fechaRegistromedicacion').val()).substr(0,10))+($('#fechaRegistromedicacion').val().substr(10,6))+":00";
@@ -2675,11 +2669,11 @@ function tablaRegistroMedicacion_2(id,fechaDesde, fechaHasta){
 //ºº--HISTORIAL MEDICACION--
 
 // -------------------------**|7|SUEÑO/DESCANSO**-----------------------
-function cargarTablaDescanso(){
+function cargarTablaDescanso(idResidente){
  
-	let modoBusqueda = $('#ver-menu-registro').find('.modoBusquedaResidente').val();
+	// let modoBusqueda = $('#ver-menu-registro').find('.modoBusquedaResidente').val();
 
-	let idResidente = busquedaIdResidente(modoBusqueda,$('#ver-menu-registro'));
+	// let idResidente = busquedaIdResidente(modoBusqueda,$('#ver-menu-registro'));
 
 	
      
@@ -2704,12 +2698,12 @@ function cargarTablaDescanso(){
 	}
 }
 
-function agregarDescanso(){
+function agregarDescanso(idResidente){
         let resp_func = false
         
-   	let modoBusqueda = $('#ver-menu-registro').find('.modoBusquedaResidente').val();
+   	// let modoBusqueda = $('#ver-menu-registro').find('.modoBusquedaResidente').val();
 
-	let idResidente = busquedaIdResidente(modoBusqueda,$('#ver-menu-registro'));
+	// let idResidente = busquedaIdResidente(modoBusqueda,$('#ver-menu-registro'));
 
 
 
@@ -3077,11 +3071,11 @@ function tablaRegistroDescanso_2(id,fechaDesde, fechaHasta){
 //ºº--HISTORIAL DESCANSO--
 
 // -------------------------**|8|INCIDENCIA**-----------------------
-function cargarTablaIncidencia(){
+function cargarTablaIncidencia(idResidente){
  
-    let modoBusqueda = $('#ver-menu-registro').find('.modoBusquedaResidente').val();
+    // let modoBusqueda = $('#ver-menu-registro').find('.modoBusquedaResidente').val();
 
-    let idResidente = busquedaIdResidente(modoBusqueda,$('#ver-menu-registro'));
+    // let idResidente = busquedaIdResidente(modoBusqueda,$('#ver-menu-registro'));
     
     if(idResidente != undefined && idResidente != ""){
 
@@ -3101,10 +3095,10 @@ function cargarTablaIncidencia(){
     }
 }
 
-function agregarIncidencia(){
+function agregarIncidencia(idResidente){
         let resp_func = false
- let modoBusqueda = $('#ver-menu-registro').find('.modoBusquedaResidente').val();
- let idResidente = busquedaIdResidente(modoBusqueda,$('#ver-menu-registro'));
+//  let modoBusqueda = $('#ver-menu-registro').find('.modoBusquedaResidente').val();
+//  let idResidente = busquedaIdResidente(modoBusqueda,$('#ver-menu-registro'));
  
 
   let fecha= convertirFechaEspIngles(($('#fechaRegistroincidencia').val()).substr(0,10))+($('#fechaRegistroincidencia').val().substr(10,6))+":00";
