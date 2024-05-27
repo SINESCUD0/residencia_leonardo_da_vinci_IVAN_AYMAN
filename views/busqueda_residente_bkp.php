@@ -1,72 +1,42 @@
 <!-- BUSQUEDA RESIDENTE -->
-
-<script>
-
-window.addEventListener("load", (event) => {
-  console.log("page is fully loaded");
-});
-
-
-
-	function miniboton_constantes(event){
-		
-		let padre = event.target.parentElement
-		let id_guardado_enValue = event.target.value
-		
-		padre.click()
-		document.getElementById(id_guardado_enValue).dispatchEvent(new Event('click'));
-	}
-</script>
-
 <div class="row">
 		<div class="col-xl-4 col-lg-4 col-md-3 col-sm-3"></div>
 		<div class="col-xl-4 col-lg-4 col-md-6 col-sm-6" >
 			<div class="input-group form-group">
-
-				<select class="custom-select modoBusquedaResidente" hidden> <option value='busquedaDni' selected>DNI</option></select>
+				<label class="col-6 col-form-label text-center font-weight-bold text-gray-800"> Buscar por :</label>
+				<select class="custom-select modoBusquedaResidente">
+					<option value="">Elegir</option>
+					<option value="busquedaDni">DNI</option>
+					<option value="busquedaApellidos">Apellidos</option>
+					<option value="busquedaExpediente">Número de Expediente</option>
+					<option value="busquedaHabitacion">Número de Habitación</option>
+				</select>     
 			</div>
 		</div>
 		<div class="col-xl-4 col-lg-4 col-md-3 col-sm-3"></div>
 	</div>
-	<div class="row busquedaDni">
-		<!-- <div class="col-xl-4 col-lg-3 col-md-3 col-sm-2"></div> -->
-		<!-- <div class="col-xl-4 col-lg-6 col-md-6 col-sm-8" > -->
-			<div class="input-group form-group padre_alinearCentroHijos" >
-					<select class="custom-select listadoResidentes dni-residente" hidden> <option> </option></select>
-						<div class="listadoResidentes_tabla">
 
-							<?php
-								foreach($listadoResidentesActivos as $residente){
-									$nombre_apellidos = $residente[2].' '.$residente[3];
-									$dni = $residente[1];
-									$id = $residente[0];
-							?>
-									<div id="<?php echo $id;?>" class="boton_residente" >
-										
-										<?php echo $nombre_apellidos ?> <br> <?php echo $dni ?>
-
-										<br>
-										<div class="minibotones_constantes" >
-											<button id='<?php echo $id ?>' onclick="miniboton_constantes(event)" value='boton-constantes'>Constante</button>
-											<button id='<?php echo $id ?>' onclick="miniboton_constantes(event)" value='boton-eliminacion'>Eliminar</button>
-											<button id='<?php echo $id ?>' onclick="miniboton_constantes(event)" value='boton-alimentacion'>Alimentación</button>
-											<button id='<?php echo $id ?>' onclick="miniboton_constantes(event)" value='boton-movilizacion'>Movilización</button>
-											<button id='<?php echo $id ?>' onclick="miniboton_constantes(event)" value='boton-higiene'>Higiene</button>
-											<button id='<?php echo $id ?>' onclick="miniboton_constantes(event)" value='boton-medicacion'>Medicación</button>
-											<button id='<?php echo $id ?>' onclick="miniboton_constantes(event)" value='boton-descanso'>Descanso</button>
-											<button id='<?php echo $id ?>' onclick="miniboton_constantes(event)" value='boton-incidencia'>Incidencia</button>
-										</div>
-
-									</div>
-					
-							<?php 
-								}
-							?>
-
-						</div>
+	<div class="row busquedaDni selectOcultable" style="display: none;">
+		<div class="col-xl-4 col-lg-3 col-md-3 col-sm-2"></div>
+		<div class="col-xl-4 col-lg-6 col-md-6 col-sm-8" >
+			<div class="input-group form-group" >
+				<div class="input-group-prepend ">
+					<span class="input-group-text"><i class="fa fa-id-card-o"></i></span>
+				</div>
+				<select class="custom-select listadoResidentes dni-residente">
+					<option value="">Seleccione un DNI</option>
+					<?php
+						foreach($listadoResidentesActivos as $residente){
+					?>
+							<option value="<?php echo $residente[0] ?>"><?php echo $residente[1] ?></option>
+             
+					<?php 
+					}
+					?>
+				</select>
 			</div>
-		<!-- </div> -->
-    <!-- <div class="col-xl-4 col-lg-3 col-md-3 col-sm-2"></div> -->
+		</div>
+    <div class="col-xl-4 col-lg-3 col-md-3 col-sm-2"></div>
 	</div>
   
     <div class="row busquedaApellidos selectOcultable"  style="display: none;">

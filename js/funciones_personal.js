@@ -88,7 +88,7 @@ function altaPersonal() {
 
 			}
 
-			// setTimeout('location.reload()',2000);
+			setTimeout('location.reload()',2000); 
 
 		},
 
@@ -190,7 +190,7 @@ function bajaPersonal(){
 
 			
 
-			// setTimeout('location.reload()',2000); 
+			setTimeout('location.reload()',2000); 
 
 		},
 
@@ -720,7 +720,7 @@ function modificarPersonal(){
 
 			}
 
-			// setTimeout('location.reload()',2000); 
+			setTimeout('location.reload()',2000); 
 
 		},
 

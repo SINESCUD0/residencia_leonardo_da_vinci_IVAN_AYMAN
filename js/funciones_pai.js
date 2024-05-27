@@ -425,7 +425,7 @@ function modificarPai(){
 										timer: 1500,
 									});
 								}
-								// setTimeout('location.reload()',2000);
+								setTimeout('location.reload()',2000); 
 							},
 							error: function(data) {
 								let respuesta =  $.parseJSON(data.responseText);
@@ -523,7 +523,7 @@ function modificarPai(){
 					guardarHistorial(historialcompleto);
 				}				
 			}
-			// setTimeout('location.reload()',2000);
+			setTimeout('location.reload()',2000); 
 		},
 		error: function(data) {
 			let respuesta =  $.parseJSON(data.responseText);
@@ -2281,11 +2281,10 @@ function rellenarHistorialPai(datosResidente){
 				}
 			  ]
 			});
-			} else {
-				console.log("EN TABLA HISTORICO PAI")
-				console.log(tablaHistoricoPai)
-				tablaHistoricoPai.clear().rows.add($("#tabla-historico-pai tbody tr")).draw();
-			}
+		} else {
+			
+			tablaHistoricoPai.clear().rows.add($("#tabla-historico-pai tbody tr")).draw();
+		}
 	}else{
 		$("#tabla-historico-pai").addClass("d-none");
 	}

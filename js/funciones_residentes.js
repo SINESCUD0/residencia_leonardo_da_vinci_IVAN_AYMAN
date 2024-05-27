@@ -153,7 +153,7 @@ function altaResidente(){
 									timer: 1500,
 								});
 							}
-							// setTimeout('location.reload()',2000); 
+							setTimeout('location.reload()',2000); 
 						},
 						error: function(data) {
 							let respuesta =  $.parseJSON(data.responseText);
@@ -264,7 +264,7 @@ function altaResidente(){
 				});
 				
 			}
-			// setTimeout('location.reload()',2000); 
+			setTimeout('location.reload()',2000); 
 		},
 		error: function(data) {
 			let respuesta =  $.parseJSON(data.responseText);
@@ -845,7 +845,7 @@ function bajaResidente(){
 				timer: 2500,
 			});
 			
-			// setTimeout('location.reload()',2000); 
+			setTimeout('location.reload()',2000); 
 		},
 		error: function(data) {
 			let respuesta =  $.parseJSON(data.responseText);
@@ -883,7 +883,6 @@ function cargarDatosResidente(){
         success: function(data) {	
 			respuesta = $.parseJSON(data);
 			datosResidente =  respuesta.datosResidente;
-			console.log(datosResidente)
 			if(respuesta.status == "WARNING"){
 				swal({
 					title: "WARNING",
@@ -1107,9 +1106,7 @@ function cargarDatosResidente(){
 
 		//Marcamos los checks del test de katz
 
-		console.log("En KATH")
 		if(datosResidente.kath != ""){
-			console.log(datosResidente.kath)
 			$("[name='BM']")[parseInt(datosResidente.kath.charAt(0))].click();
 			$("[name='L']")[parseInt(datosResidente.kath.charAt(1))].click();
 			$("[name='BC']")[parseInt(datosResidente.kath.charAt(2))].click();
@@ -1119,7 +1116,6 @@ function cargarDatosResidente(){
 			
 			katz2();
 		}else{
-			console.log("Vacio")
 			var radio = document.querySelectorAll('input[type=radio]:checked');
 			radio.forEach(element => {
     			element.checked = false;
@@ -1431,7 +1427,7 @@ function modificarResidente(){
 										timer: 1500,
 									});
 								}
-								// setTimeout('location.reload()',2000); 
+								setTimeout('location.reload()',2000); 
 							},
 							error: function(data) {
 								let respuesta =  $.parseJSON(data.responseText);
@@ -1537,7 +1533,7 @@ function modificarResidente(){
 					timer: 1500,
 				});
 			}
-			// setTimeout('location.reload()',2000); 
+			setTimeout('location.reload()',2000); 
 		},
 		error: function(data) {
 			let respuesta =  $.parseJSON(data.responseText);

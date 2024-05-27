@@ -267,7 +267,6 @@
 				<div class="row mt-5">
 					<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 text-center">
 						<button type="button" class="btn btn-success" id="boton-agregar-constante">Alta Constantes</button>
-						<button type="button" class="btn btn-success" id="boton-agregar-constante-guardarSiguiente">Guardar y Siguiente</button>
 					</div>
 				</div>
             </div>

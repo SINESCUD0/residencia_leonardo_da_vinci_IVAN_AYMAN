@@ -24,7 +24,7 @@
 
 	$totalResidente = totalResidente($conn); 
 
-	$habitacionesOcupadas= habitacionesOcupadas($conn);
+	$habitacionesOcupadas= habitacionesOcupadas($conn); 
 
   
 
@@ -39,8 +39,6 @@
 	$listadoResidentes = listadoResidentes($conn); //activo e inactivo
 
 	$listadoResidentesActivos = listadoResidentesActivos($conn);
-
-	$listadoHabitaciones = listadoHabitaciones($conn); //carga todas las habitaciones
 
 	$listadoHabitacionesOcupadasConResidentes = listadoHabitacionesOcupadasConResidentes($conn); //solo las ocupadas
 

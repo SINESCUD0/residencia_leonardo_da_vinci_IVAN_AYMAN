@@ -157,7 +157,7 @@ function moverResidenteHabitacion(){
 					timer: 1500,
 				});
 			}
-			// setTimeout('location.reload()',2000);
+			setTimeout('location.reload()',2000); 
 		},
 		error: function(data) {
 			let respuesta =  $.parseJSON(data.responseText);

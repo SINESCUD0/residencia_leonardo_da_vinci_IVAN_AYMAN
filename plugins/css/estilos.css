@@ -141,9 +141,14 @@ td {
 
 
 
+/* {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+} */
 
 
-/* .boton_residente {
+.boton_residente {
   background-color: #8ba8ff;
   border: none;
   color: white;
@@ -155,7 +160,6 @@ td {
   width: 75%;
   height: 100%;
 
-
 }
 
 .listadoResidentes_tabla {
@@ -163,9 +167,11 @@ td {
   grid-template-columns: auto auto auto;
   overflow-x: scroll;
   height: 50%;
-  
+  justify-items: center;
 }
 .padre_alinearCentroHijos {
   display: flex;
   justify-content: center;
-} */
+  padding: 0px;
+  /* align-items: center; */
+}
