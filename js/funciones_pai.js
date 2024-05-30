@@ -639,7 +639,8 @@ function cargarDatosPai(){
 
         //Mostrar indice katz en el PAI
 		
-		if(datosResidente.kath != ""){
+		// if(datosResidente.kath != "" || datosResidente.kath != null){
+			if(datosResidente.kath.length == 6){
 
 			$("#B[name='B']")[parseInt(datosResidente.kath.charAt(0)) + 2].click();
 

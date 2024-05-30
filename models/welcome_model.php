@@ -224,6 +224,7 @@ function listadoResidentesActivos($conn){
 
 
 
+
 function listadoResidentes($conn){
 
 	$listado=array();

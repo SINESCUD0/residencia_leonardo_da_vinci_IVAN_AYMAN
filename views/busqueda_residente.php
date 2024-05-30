@@ -2,20 +2,44 @@
 
 <script>
 
-window.addEventListener("load", (event) => {
-  console.log("page is fully loaded");
-});
-
-
-
 	function miniboton_constantes(event){
-		
-		let padre = event.target.parentElement
+
+		let padre = event.target.parentElement.parentElement
 		let id_guardado_enValue = event.target.value
+
+		// Activar SOLO SI se usa el Select para cambiar de Pisos
+		$('.listadoResidentes').children().replaceWith("<option value="+padre.id+" selected >"+padre.id+" </option>")
+		$('.listadoResidentes').trigger("change")
+		// Fin de Activar SOLO SI se usa el Select para cambiar de Pisos
+		
 		
 		padre.click()
 		document.getElementById(id_guardado_enValue).dispatchEvent(new Event('click'));
+		
 	}
+
+	function select_piso(event){
+
+		let piso = event.target.value
+		var xhr = new XMLHttpRequest();
+        xhr.open('POST', '../controllers/consulta_residente_segunPiso.php', true);
+        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+
+		xhr.onload = function() {
+            if (xhr.status === 200) {
+                var texto = xhr.responseText;
+				// document.getElementById('habitaciones').innerHTML = texto;
+				$(".listadoResidentes_tabla").html(texto)
+                console.log(xhr.responseText);
+            } else {
+                console.error('Error en la solicitud. Estado:', xhr.status);
+            }
+        };
+
+		// xhr.send('piso=' + encodeURIComponent(piso));
+		xhr.send('piso=' + piso);
+	}
+
 </script>
 
 <div class="row">
@@ -28,11 +52,22 @@ window.addEventListener("load", (event) => {
 		</div>
 		<div class="col-xl-4 col-lg-4 col-md-3 col-sm-3"></div>
 	</div>
+
 	<div class="row busquedaDni">
+
+	<select id="select_piso" name="select_piso" onchange="select_piso(event)">
+		<option value="1">1</option>
+		<option value="2">2</option>
+		<option value="3">3</option>
+	</select>
+
+	<input type="hidden" value="" id="secret_piso"/>
 		<!-- <div class="col-xl-4 col-lg-3 col-md-3 col-sm-2"></div> -->
 		<!-- <div class="col-xl-4 col-lg-6 col-md-6 col-sm-8" > -->
 			<div class="input-group form-group padre_alinearCentroHijos" >
-					<select class="custom-select listadoResidentes dni-residente" hidden> <option> </option></select>
+
+					<select class="custom-select listadoResidentes dni-residente" hidden="inherit"> <option> </option></select>
+
 						<div class="listadoResidentes_tabla">
 
 							<?php

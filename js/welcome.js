@@ -3328,6 +3328,7 @@ $(document).ready(function(){
     $('#datos-contacto').click(function(){
 
 		$('.minibotones_constantes').hide()
+		$('select[name="select_piso"]').hide()
 
       if($('#ver-datos-contacto').is(':hidden')){
 
@@ -3356,6 +3357,7 @@ $(document).ready(function(){
     $('#auxiliar-residente').click(function(){
 
 		$('.minibotones_constantes').hide()
+		$('select[name="select_piso"]').hide()
 
       if($('#ver-auxiliar-residente').is(':hidden')){
 
@@ -3434,6 +3436,7 @@ $(document).ready(function(){
     $('#agregar-consulta').click(function(){
 
 		$('.minibotones_constantes').hide()
+		$('select[name="select_piso"]').hide()
 
       if($('#ver-consulta').is(':hidden')){
 
@@ -3483,6 +3486,7 @@ $(document).ready(function(){
 	 $('#menu-registro').click(function(){
 		
 		$('.minibotones_constantes').show()
+		$('select[name="select_piso"]').show()
 
 		if($('#ver-menu-registro').is(':hidden')){
 
@@ -3509,6 +3513,7 @@ $(document).ready(function(){
 	   $('#historial-registro').click(function(){
 
 		$('.minibotones_constantes').hide()
+		$('select[name="select_piso"]').hide()
   
 		  if($('#ver-historial-registro').is(':hidden')){
 	
@@ -3565,6 +3570,7 @@ $(document).ready(function(){
     $('#baja-residente').click(function(){
 
 		$('.minibotones_constantes').hide()
+		$('select[name="select_piso"]').hide()
 
       if($('#ver-baja-residente').is(':hidden')){
 
@@ -3591,6 +3597,7 @@ $(document).ready(function(){
     $('#modificar-residente').click(function(){
 
 		$('.minibotones_constantes').hide()
+		$('select[name="select_piso"]').hide()
 
       if($('#ver-modificar-residente').is(':hidden')){
 
@@ -3618,6 +3625,7 @@ $(document).ready(function(){
 
     $('#mover-habitacion').click(function(){
 		$('.minibotones_constantes').hide()
+		$('select[name="select_piso"]').hide()
 
       if($('#ver-mover-habitacion').is(':hidden')){
 
@@ -3670,6 +3678,7 @@ $(document).ready(function(){
     $('#consulta-tabla').click(function(){
 
 		$('.minibotones_constantes').hide()
+		$('select[name="select_piso"]').hide()
 
       if($('#ver-consulta-tabla').is(':hidden')){
 
@@ -3742,6 +3751,7 @@ $(document).ready(function(){
     $('#modificar-plan').click(function(){
 
 		$('.minibotones_constantes').hide()
+		$('select[name="select_piso"]').hide()
 
       if($('#ver-modificar-plan').is(':hidden')){
 
@@ -3789,6 +3799,7 @@ $(document).ready(function(){
 	$('#historial-pai').click(function(){
 
 		$('.minibotones_constantes').hide()
+		$('select[name="select_piso"]').hide()
 
 		if($('#ver-historial-pai').is(':hidden')){
 	

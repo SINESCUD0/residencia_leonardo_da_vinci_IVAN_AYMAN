@@ -1106,7 +1106,9 @@ function cargarDatosResidente(){
 
 		//Marcamos los checks del test de katz
 
-		if(datosResidente.kath != ""){
+		// if(datosResidente.kath != "" || datosResidente.kath != null){
+		if(datosResidente.kath.length == 6){
+			console.log(datosResidente.kath)
 			$("[name='BM']")[parseInt(datosResidente.kath.charAt(0))].click();
 			$("[name='L']")[parseInt(datosResidente.kath.charAt(1))].click();
 			$("[name='BC']")[parseInt(datosResidente.kath.charAt(2))].click();
