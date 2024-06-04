@@ -141,9 +141,22 @@ td {
 
 
 
+/* {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+} */
 
-
-/* .boton_residente {
+.boton_residente {
+  text-align: center;
+  width: 75%;
+  height: 100%;
+  padding: 15px 32px;
+  font-size: 16px;
+  background: rgb(236, 236, 236);
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+/*.boton_residente {
   background-color: #8ba8ff;
   border: none;
   color: white;
@@ -154,18 +167,123 @@ td {
   font-size: 16px;
   width: 75%;
   height: 100%;
-
-
-}
-
+}*/
 .listadoResidentes_tabla {
+  width: 100%;
   display:grid;
-  grid-template-columns: auto auto auto;
-  overflow-x: scroll;
-  height: 50%;
-  
+  grid-template-columns:repeat(auto-fill, 550px);
+  grid-gap:20px;
+  /**height: 50%;**/
+  justify-items: center;
 }
-.padre_alinearCentroHijos {
-  display: flex;
+.padre_alinearCentroHijos{
+  width: 100%;
+}
+.minibotones_constantes{
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+/**.padre_alinearCentroHijos {
+  /**display: flex;
   justify-content: center;
-} */
+  padding: 0px;
+  width: 100%;
+  /* align-items: center;
+}**/
+.minibotones_constantes > button {
+  display: inline-block;
+  position: relative;
+  padding: 15px 30px;
+  font-size: 18px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #fff;
+  background: linear-gradient(to bottom, #3498db, #2980b9);
+  border: 1px solid #2980b9;
+  border-radius: 5px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1), inset 0px 2px 4px rgba(255, 255, 255, 0.2);
+  text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  overflow: hidden;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.minibotones_constantes > button::before,
+        .minibotones_constantes > button::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: inherit;
+  z-index: -1;
+  transition: transform 0.3s;
+}
+
+.minibotones_constantes > button::before {
+  top: 0;
+  left: -100%;
+  transform: skewX(-45deg);
+}
+
+.minibotones_constantes > button::after {
+  bottom: 0;
+  right: -100%;
+  transform: skewX(45deg);
+}
+
+.minibotones_constantes > button:hover {
+  background: linear-gradient(to bottom, #042b46, #0a525cd8);
+  transform: translateY(-2px);
+  box-shadow: 0px 6px 8px rgba(0, 195, 255, 0.2), inset 0px 2px 4px rgba(255, 255, 255, 0.1);
+}
+
+.minibotones_constantes > button:hover::before {
+  transform: translateX(100%);
+}
+
+.minibotones_constantes > button:hover::after {
+  transform: translateX(-100%);
+}
+#ver-menu-registro{
+  margin-left: 10px;
+}
+
+.radio-inputs {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  border-radius: 0.5rem;
+  background-color: #EEE;
+  box-sizing: border-box;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  padding: 0.25rem;
+  width: 300px;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.radio-inputs .radio {
+  flex: 1 1 auto;
+  text-align: center;
+}
+
+.radio-inputs .radio input {
+  display: none;
+}
+
+.radio-inputs .radio .name {
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.5rem;
+  border: none;
+  padding: .5rem 0;
+  color: rgba(51, 65, 85, 1);
+  transition: all .15s ease-in-out;
+}
+
+.radio-inputs .radio input:checked + .name {
+  background-color: #fff;
+  font-weight: 600;
+}
