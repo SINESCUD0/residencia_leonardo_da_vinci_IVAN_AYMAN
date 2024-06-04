@@ -104,6 +104,8 @@ function totalHabitaciones($conn){
 
 
 
+
+
 //LISTADO DEL PERSONAL EN ACTIVO
 
 function listadoPersonalActivo($conn){	
@@ -222,9 +224,6 @@ function listadoResidentesActivos($conn){
 
 }
 
-
-
-
 function listadoResidentes($conn){
 
 	$listado=array();
@@ -288,6 +287,36 @@ function habitacionesLibresPorTipo($conn,$numCamas){
 }
 
 
+// LISTADO DE TODAS LAS HABITACIONES
+
+function listadoHabitaciones($conn){
+
+	$listado=array();
+
+	$sql = "SELECT * from habitacion";
+
+	$result = mysqli_query($conn,$sql);
+
+	if($result){
+
+		while($row=mysqli_fetch_assoc($result)){
+
+			// array_push($listado,array($row['id_habitacion'],$row['num_camas']));
+			array_push($listado,array($row['id_habitacion'],$row['num_camas']));
+
+		}
+
+	}else
+
+		trigger_error ("Error en $sql , error: " . mysqli_error($conn));
+
+
+
+	return $listado;
+
+
+}
+
 
 //LISTADO DE LAS HABITACIONES OCUPADAS (AMBAS, individual y doble) Y SUS OCUPANTES
 
@@ -315,9 +344,6 @@ function listadoHabitacionesOcupadasConResidentes($conn){
 
 	return $listado;
 
-	
-
-	
 
 }
 

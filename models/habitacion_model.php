@@ -25,6 +25,32 @@ function habitacionesLibresPorTipo($conn,$numCamas){
 	return json_encode($response);
 }
 
+
+// function listadoHabitaciones($conn){
+// 	$response=array();
+// 	$listado=array();
+// 	$sql = "SELECT *  FROM habitacion;";
+// 	$result = mysqli_query($conn,$sql);
+
+// 	if($result){
+// 		while($row=mysqli_fetch_assoc($result)){
+// 			array_push($listado,array($row['id_habitacion']), array($row['num_camas']));
+// 		}
+// 		$response=array(
+// 				"status" => "OK",
+// 				"listadoHabitaciones" => $listado
+// 		);
+// 	}else{
+// 		http_response_code(500);
+// 		$response=array(
+// 			"status" => "ERROR",
+// 			"message" => mysqli_error($conn)
+// 		);
+		
+// 	}
+// 	return json_encode($response);
+// }
+
 function consultarHabitacion($conn,$idResidente,$order,$limit){
 	$response=array();
 	$datos=array();

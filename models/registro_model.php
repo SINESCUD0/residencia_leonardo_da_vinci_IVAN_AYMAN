@@ -549,7 +549,7 @@ function insertarRegistroDescanso($conn,$arrayCampos,$order,$limit){
 //-----------------------------------------------------------------
 function insertarRegistroIncidencia($conn,$arrayCampos,$order,$limit){
 
-	$table1="registro_incidencia";
+	$table1="registro_Incidencia";
 
 	$response=array();
 
@@ -620,9 +620,6 @@ function insertarRegistroIncidencia($conn,$arrayCampos,$order,$limit){
 			 $response = insertTable($conn,$arrayCampos,$table1);
 
 	}
-        
-
-
 
 	return json_encode($response);	
 
