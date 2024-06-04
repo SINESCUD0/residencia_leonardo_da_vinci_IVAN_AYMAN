@@ -4,23 +4,24 @@
 
 	function miniboton_constantes(event){
 
-		let padre = event.target.parentElement.parentElement
-		let id_guardado_enValue = event.target.value
+		let padre = event.target.parentElement.parentElement;
+		let id_guardado_enValue = event.target.value;
 
 		// Activar SOLO SI se usa el Select para cambiar de Pisos
-		$('.listadoResidentes').children().replaceWith("<option value="+padre.id+" selected >"+padre.id+" </option>")
-		$('.listadoResidentes').trigger("change")
+		$('.listadoResidentes').children().replaceWith("<option value="+padre.id+" selected >"+padre.id+" </option>");
+		$('.listadoResidentes').trigger("change");
 		// Fin de Activar SOLO SI se usa el Select para cambiar de Pisos
 		
 		
-		padre.click()
+		padre.click();
 		document.getElementById(id_guardado_enValue).dispatchEvent(new Event('click'));
 		
 	}
 
 	function select_piso(event){
 
-		let piso = event.target.value
+		//let piso = event.target.value;
+		let piso = event;
 		var xhr = new XMLHttpRequest();
         xhr.open('POST', '../controllers/consulta_residente_segunPiso.php', true);
         xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
@@ -29,7 +30,7 @@
             if (xhr.status === 200) {
                 var texto = xhr.responseText;
 				// document.getElementById('habitaciones').innerHTML = texto;
-				$(".listadoResidentes_tabla").html(texto)
+				$(".listadoResidentes_tabla").html(texto);
                 console.log(xhr.responseText);
             } else {
                 console.error('Error en la solicitud. Estado:', xhr.status);
@@ -55,11 +56,27 @@
 
 	<div class="row busquedaDni">
 
-	<select id="select_piso" name="select_piso" onchange="select_piso(event)">
-		<option value="1">1</option>
-		<option value="2">2</option>
-		<option value="3">3</option>
-	</select>
+	<!--<select id="select_piso" name="select_piso" onchange="select_piso(event)" onfocus="this.selectedIndex = 0;">
+		<option>Selecciona el piso</option>
+		<option value="1">Piso 1</option>
+		<option value="2">Piso 2</option>
+		<option value="3">Piso 3</option>
+	</select>-->
+
+	<div class="radio-inputs">
+		<label class="radio">
+			<input type="radio" name="radio" onclick="select_piso(1)">
+			<span class="name">PISO 1</span>
+		</label>
+		<label class="radio">
+			<input type="radio" name="radio" onclick="select_piso(2)">
+			<span class="name">PISO 2</span>
+		</label>
+		<label class="radio">
+			<input type="radio" name="radio" onclick="select_piso(3)">
+			<span class="name">PISO 3</span>
+		</label>
+	</div>
 
 	<input type="hidden" value="" id="secret_piso"/>
 		<!-- <div class="col-xl-4 col-lg-3 col-md-3 col-sm-2"></div> -->
@@ -69,7 +86,7 @@
 					<select class="custom-select listadoResidentes dni-residente" hidden="inherit"> <option> </option></select>
 
 						<div class="listadoResidentes_tabla">
-
+							<!--
 							<?php
 								foreach($listadoResidentesActivos as $residente){
 									$nombre_apellidos = $residente[2].' '.$residente[3];
@@ -97,7 +114,7 @@
 							<?php 
 								}
 							?>
-
+							-->
 						</div>
 			</div>
 		<!-- </div> -->
